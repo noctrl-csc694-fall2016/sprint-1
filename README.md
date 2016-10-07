@@ -20,6 +20,8 @@ Things to possibly cover here include:
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
+
+3b4cf197c69b19b06f34957e7d51bb8504f8f50e
 =======
 # sprint-1
 First sprint repository.
