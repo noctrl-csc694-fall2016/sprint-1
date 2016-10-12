@@ -7,6 +7,7 @@ This is the readme for our first sprint.
 
 Things to possibly cover here include:
 * Ruby version
+* test-weih
 * System dependencies
 * Configuration
 * Database creation
