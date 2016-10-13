@@ -1,0 +1,283 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+/* Core CSS */
+body {
+	margin-top: 10px;
+	padding-top: 20px;
+	margin-bottom: 60px;		/* margin bottom by footer height */
+}
+
+/* Header */
+.navbar-donna {
+	background-color: white;
+	height: 120px;
+	border-bottom: 2px solid #85bb65;
+}
+.navbar-donna-search {
+	margin-top: 40px;
+}
+.navbar-donna-brand {
+	color: dimgray;
+}
+.navbar-header .navbar-brand{
+    float: right;
+}
+
+/* Page Content */
+.container-donna {
+	padding-top: 120px;
+	margin-bottom:60px;
+	a {
+		color: #B21212;
+		&:hover{
+			color: #FF0000;
+		}
+	}
+}
+.row-donna-home-icons {
+	padding: 25px;
+	font-size: 2.0em;
+	color: dimgray;
+}
+.icon-donna {
+	font-size: 2.0em;
+	padding-right: 12px;
+}
+.icon-donna-text {
+	font-size: 2.0em;
+	color: dimgray;
+}
+.icon-donna-new {
+	color: #85bb65;
+}
+.icon-donna-surf {
+	color: #9b65bb;
+}
+.icon-donna-reports {
+	color: #6585bb;
+}
+.icon-donna-importexport {
+	color: #bb9b65;
+}
+
+/* Login screen CSS */
+.navbar-donna-login {
+	background: transparent;
+}
+.navbar-donna-login-logo {
+	margin-top: 40px;
+}
+.navbar-donna-login-title {
+	color: dimgray;
+}
+.row-login {
+	padding-top: 100px;
+}
+
+/* Page Action Buttons */
+.primary-action-link {
+	color: #85bb65;
+	font-size: 1.5em;
+}
+
+/* Forms */
+.required-field-marker {
+	color: #f00;
+	font-weight: bold;
+}
+
+/* Reports */
+.report-title{
+	font-size: 1.5em;
+	font-weight: bold;
+}
+.report-description{
+	font-size: 1.5em;
+}
+
+/* Footer CSS */
+.footer {
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    position: fixed; /* Sticky Footer */
+	background-color: #85bb65;
+	-webkit-border-top-left-radius: 50px;
+	-webkit-border-top-right-radius: 50px;
+    -moz-border-radius-topleft: 50px;
+    -moz-border-radius-topright: 50px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+.footer-text {
+	margin: 20px 0;		/* center footer text horizontally */
+}
+.footer a:link, .footer a:visited .footer a:active{
+	color: #0971B2;
+}
+.footer a:hover{
+	color: #1485CC;
+}
+
+/* Misc */
+.top-margin-sm{
+	margin-top: 10px;
+}
+
+.bottom-vertical-alignment{
+	display: inline-block;
+    vertical-align: bottom;
+    float: none;
+}
+/*
+	Sources used here and in my HTML:
+	
+	Bootstrap starter template - http://getbootstrap.com/getting-started/#template
+	Bootstrap CDN - https://www.bootstrapcdn.com
+	Sticky footer - http://getbootstrap.com/examples/sticky-footer/
+	Fixed navbar at top - https://getbootstrap.com/examples/navbar-fixed-top/
+	Login page setup - https://odyssey495.herokuapp.com
+	Donna stick figure logo - http://www.clipartpanda.com/categories/girl-stick-figure-running, or http://images.clipartpanda.com/girl-stick-figure-running-LTKzLooTa.jpeg
+	Color help - http://www.colorhexa.com/85bb65
+	Generate a favicon from an image - http://www.favicon-generator.org/
+	Bootstrap search in navbar - http://jsfiddle.net/philnicholas/XfzFQ/ 
+
+*/
+
+/* Core CSS */
+body {
+	margin-top: 10px;
+	padding-top: 20px;
+	margin-bottom: 60px;		/* margin bottom by footer height */
+}
+
+/* Header */
+.navbar-donna {
+	background-color: white;
+	height: 120px;
+	border-bottom: 2px solid #85bb65;
+}
+.navbar-donna-search {
+	margin-top: 40px;
+}
+.navbar-donna-brand {
+	color: dimgray;
+}
+.navbar-header .navbar-brand{
+    float: right;
+}
+
+/* Page Content */
+.container-donna {
+	padding-top: 120px;
+	margin-bottom:60px;
+	a {
+		color: #B21212;
+		&:hover{
+			color: #FF0000;
+		}
+	}
+}
+.row-donna-home-icons {
+	padding: 25px;
+	font-size: 2.0em;
+	color: dimgray;
+}
+.icon-donna {
+	font-size: 2.0em;
+	padding-right: 12px;
+}
+.icon-donna-text {
+	font-size: 2.0em;
+	color: dimgray;
+}
+.icon-donna-new {
+	color: #85bb65;
+}
+.icon-donna-surf {
+	color: #9b65bb;
+}
+.icon-donna-reports {
+	color: #6585bb;
+}
+.icon-donna-importexport {
+	color: #bb9b65;
+}
+
+/* Login screen CSS */
+.navbar-donna-login {
+	background: transparent;
+}
+.navbar-donna-login-logo {
+	margin-top: 40px;
+}
+.navbar-donna-login-title {
+	color: dimgray;
+}
+.row-login {
+	padding-top: 100px;
+}
+
+/* Page Action Buttons */
+.primary-action-link {
+	color: #85bb65;
+	font-size: 1.5em;
+}
+
+/* Forms */
+.required-field-marker {
+	color: #f00;
+	font-weight: bold;
+}
+
+/* Reports */
+.report-title{
+	font-size: 1.5em;
+	font-weight: bold;
+}
+.report-description{
+	font-size: 1.5em;
+}
+
+/* Footer CSS */
+.footer {
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    position: fixed; /* Sticky Footer */
+	background-color: #85bb65;
+}
+.footer-text {
+	margin: 20px 0;		/* center footer text horizontally */
+}
+.footer a:link, .footer a:visited .footer a:active{
+	color: #0971B2;
+}
+.footer a:hover{
+	color: #1485CC;
+}
+
+/* Misc */
+.top-margin-sm{
+	margin-top: 10px;
+}
+
+.bottom-vertical-alignment{
+	display: inline-block;
+    vertical-align: bottom;
+    float: none;
+}
+/*
+	Sources used here and in my HTML:
+	
+	Bootstrap starter template - http://getbootstrap.com/getting-started/#template
+	Bootstrap CDN - https://www.bootstrapcdn.com
+	Sticky footer - http://getbootstrap.com/examples/sticky-footer/
+	Fixed navbar at top - https://getbootstrap.com/examples/navbar-fixed-top/
+	Login page setup - https://odyssey495.herokuapp.com
+	Donna stick figure logo - http://www.clipartpanda.com/categories/girl-stick-figure-running, or http://images.clipartpanda.com/girl-stick-figure-running-LTKzLooTa.jpeg
+	Color help - http://www.colorhexa.com/85bb65
+	Generate a favicon from an image - http://www.favicon-generator.org/
+	Bootstrap search in navbar - http://jsfiddle.net/philnicholas/XfzFQ/ 
+
+*/
