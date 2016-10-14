@@ -9,9 +9,8 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class= "navbar-brand" href="/"><%= link_to image_tag("logo_donna.jpg", height: "120",  alt: "Donna Logo"),
-            '/' %>
-			<div class="navbar-brand navbar-donna-brand" href="/"><h1>Donna<br>Donor</h1></div>
+			<%= link_to root_path, class: "navbar-brand" do %><%= image_tag("logo_donna.jpg", height: "120",  alt: "Donna Logo") %><% end %>
+			<div class="navbar-brand navbar-donna-brand"><a href="/" class="glow"><h1>Donna<span class="line-break">Donor</span></h1></a></div>
 		</div>
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav navbar-right navbar-donna-search">

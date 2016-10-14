@@ -10,4 +10,10 @@ class StaticPagesController < ApplicationController
   
   def contact
   end
+  
+  def reports
+  end
+  
+  def import_export
+  end
 end

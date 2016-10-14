@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  donor: one
+  activity: one
+  amount: 1.5
+  type: 
+  notes: MyText
+
+two:
+  donor: two
+  activity: two
+  amount: 1.5
+  type: 
+  notes: MyText
