@@ -1,0 +1,15 @@
+<% provide(:title, "Export") %>
+<div class="row">
+  <div class="col-sm-10 col-xs-offset-2">
+  	<div class="page-header">
+  		<h1>Export Data <small>&nbsp; Choose what type of data you would like to export.</small></h1>
+  	</div>
+  </div>
+</div>
+<div class="row col-xs-offset-2">
+  <div>Exports will be created in the form of a .csv file.</div>
+  <br />
+  <button type="button" onclick="alert('export csv')">Export .CSV</button>
+  <br />
+</div>
+<%= render 'import_export/back' %>
