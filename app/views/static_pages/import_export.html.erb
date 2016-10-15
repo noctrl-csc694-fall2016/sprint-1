@@ -2,11 +2,58 @@
 <div class="row">
   <div class="col-sm-10 col-xs-offset-2">
   	<div class="page-header">
-  		<h2>Import/Export</h2>
+  		<h2 class="import-color">Import <small>&nbsp; read data into Donna Donor from an outside source</small></h2>
   	</div>
   </div>
 </div>
-<div class="row col-xs-offset-2">
-    <p>Welcome To Donna Doner!  A web application built by North Central College CSC
-    694 Class of Fall 2016!</p>
+<!-- Import content -->
+  <div class="row report-row">
+    <div class="col-xs-8 col-xs-offset-2"> 
+    <%= link_to(import_export_path) do %>
+    	<span class="	glyphicon glyphicon-leaf import-icon import-color"></span>
+    	<span class="report-title">In-kind</span> 
+  	<% end %>
+    	<span class="report-description">- import non-cash, in-kind donations</span> 
+    </div>
+  </div>
+
+<div class="row report-row">
+  <div class="col-xs-8 col-xs-offset-2"> 
+  <%= link_to(import_export_path) do %>
+  	<span class="	glyphicon glyphicon-download import-icon import-color"></span>
+  	<span class="report-title">RE Import</span> 
+  	<% end %>
+  	<span class="report-description">- import data from Raiser's Edge</span> 
+  </div>
+</div>
+
+<!-- Export header -->
+<div class="row export-header">
+  <div class="col-sm-10 col-xs-offset-2">
+  	<div class="page-header">
+  		<h2 class="export-color">Export <small>&nbsp; write data out of the program</small></h2>
+  		
+  	</div>
+  </div>
+</div>   <!-- row -->
+
+<!-- Export content -->
+<div class="row report-row">
+	<div class="col-xs-8 col-xs-offset-2"> 
+	<%= link_to(import_export_path) do %>
+	<span class="glyphicon glyphicon-wrench export-icon export-color"></span>
+	<span class="report-title">MailChimp</span>
+	<% end %>
+	<span class="report-description">- export contact info to MailChimp</span> 
+	</div>
+</div>
+
+<div class="row report-row">
+	<div class="col-xs-8 col-xs-offset-2"> 
+	<%= link_to(import_export_path) do %>
+	<span class="glyphicon glyphicon-wrench export-icon export-color"></span>
+	<span class="report-title">Contstant Contact</span>
+	<% end %>
+	<span class="report-description">- export contact info to Constant Contact</span> 
+	</div>
 </div>
