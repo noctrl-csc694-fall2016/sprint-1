@@ -1,0 +1,18 @@
+<% provide(:title, "Import") %>
+<div class="row">
+  <div class="col-sm-10 col-xs-offset-2">
+  	<div class="page-header">
+  		<h1>Import Data 
+  		  <small>&nbsp; Choose what data and file type to import.</small>
+		  </h1>
+  	</div>
+  </div>
+</div>
+<div class="row col-xs-offset-2">
+  <div>Imports will be created in the form of a .csv file, or whatever type 
+  of file that Raiser's Edge or Donor Snap can output.</div>
+  <br />
+  <button type="button" onclick="alert('import data')">Import Data</button>
+  <br />
+</div>
+<%= render 'import_export/back' %>

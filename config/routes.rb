@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  get 'import-export/import'
+  get 'import-export/inkind'
+  get 'import-export/export'
+
   resources :gifts
   resources :donors
   resources :activities
