@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= favicon_link_tag %>
+    
     <title><%= full_title(yield(:title)) %></title>
     <%= csrf_meta_tags %>
 
@@ -13,7 +18,6 @@
     <%= render 'layouts/header' %>
     <div class="container-fluid container-donna page-content">
       <%= yield %>
-      
     </div>
     <%= render 'layouts/footer' %>
   </body>

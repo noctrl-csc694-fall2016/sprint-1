@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
   
-  get 'import-export/import'
-  get 'import-export/inkind'
-  get 'import-export/export'
-
   resources :gifts
   resources :donors
   resources :activities
@@ -14,6 +10,10 @@ Rails.application.routes.draw do
   get    '/contact', to: 'static_pages#contact'
   get    '/reports', to: 'static_pages#reports'
   get    '/import-export', to: 'static_pages#import_export'
+  
+  get 'import-export/import'
+  get 'import-export/inkind'
+  get 'import-export/export'
   
   root 'static_pages#home'
 end
