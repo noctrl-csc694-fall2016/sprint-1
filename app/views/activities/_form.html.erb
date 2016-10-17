@@ -1,0 +1,48 @@
+<%= form_for(@activity) do |f| %>
+    <div class="row form-group">
+      <div class="col-xs-3 col-xs-offset-2">
+        <%= f.label :name %>
+        <span class="required-field-marker">*</span>
+        <%= f.text_field :name, class: 'form-control input-sm' %> 
+      </div>
+      <div class="col-xs-2">
+        <%= f.label :start_date %>
+        <span class="required-field-marker">*</span>
+        <%= f.date_field :start_date, class: 'form-control input-sm' %>
+      </div>
+      <div class="col-xs-2">
+        <%= f.label :end_date %>
+        <span class="required-field-marker">*</span>
+        <%= f.date_field :end_date, class: 'form-control input-sm' %>
+      </div>
+    </div>
+    
+    <div class="row form-group">
+      <div class="col-xs-3 col-xs-offset-2">
+        <%= f.label :description %>
+        <span class="required-field-marker">*</span>
+        <%= f.text_field :description, class: 'form-control input-sm' %> 
+      </div>
+      <div class="col-xs-2">
+        <%= f.label :goal %>
+        <span class="required-field-marker">*</span>
+        <%= f.number_field :goal, class: 'form-control input-sm' %> 
+      </div>
+      <div class="col-xs-2"> &nbsp; </div>
+    </div>
+
+    <div class="row form-group">
+      <div class="col-xs-8  col-xs-offset-2">
+        <%= f.label :notes %></br>
+        <%= f.text_area :notes, placeholder: "Enter notes here...", cols: "120", rows: "5", class: "form_control, input-sm" %>
+      </div>
+    </div>
+
+    <div class="row form-group">
+      <div class="col-xs-4 col-xs-offset-4 text-center">
+        <%= f.submit yield(:button_text), class: "btn btn-success" %>
+        &nbsp;
+        <%= link_to "Cancel", activities_path, class: "btn btn-danger" %>
+      </div>
+    </div>
+  <% end %>

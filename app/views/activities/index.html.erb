@@ -1,0 +1,43 @@
+<% provide(:title, "Surf Activity") %>
+<div class="row">
+  <div class="col-sm-8 col-xs-offset-2">
+  	<div class="page-header">
+  		<h2>Surf Activity <small>&nbsp; Select a row to view or edit that activty.</small></h2>
+  		<aside class="text-right">
+  		  <%= link_to(new_activity_path) do %>
+			    <span class="glyphicon glyphicon-plus icon-donna icon-donna-new"></span><span class="icon-donna-text">New Activity</span>
+		    <% end %>
+  		  <div>
+      		Surf to: 
+          		<%=link_to "All Gifts", gifts_url %>
+          		<%=link_to "All Donors", donors_url %>
+        </div>
+  		</aside>
+  	</div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-8 col-xs-offset-2">
+    <table class="table table-striped table-hover table-bordered table-responsive">
+      <thead>
+        <tr>
+          <td>Name</td>
+          <td>Date</td>
+          <td>Goal</td>
+          <td>Progress</td>
+        </tr>
+      </thead>
+      <tbody>
+        <% @activities.each do |activity| %>
+        <tr>
+          <td><%= activity.name %></td>
+          <td><%= activity.end_date %></td>
+          <td><%= activity.goal %></td>
+          <td></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
