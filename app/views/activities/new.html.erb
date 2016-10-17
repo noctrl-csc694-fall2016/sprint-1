@@ -1,56 +1,12 @@
 <% provide(:title, "New Activity") %>
+<% provide(:button_text, "Create") %>
 <div class="row">
-  <div class="col-sm-10 col-xs-offset-2">
+  <div class="col-sm-8 col-xs-offset-2">
   	<div class="page-header">
   		<h2>New Activity <small>&nbsp; Create a new Activity.</small></h2>
   	</div>
   </div>
 </div>
 <div class="row">
-  <form action="#"  accept-charset="UTF-8" method="post">
-    <div class="row form-group">
-      <div class="col-xs-3 col-xs-offset-2">
-        <label for="activity_name">Name </label><span class="required-field-marker">*</span>
-        <input class="form-control input-sm" type="text" name="activity[name]" id="activity_name" />
-      </div>
-      <div class="col-xs-2">
-        <label for="activity_startdate">Start Date</label>
-        <input class="form-control input-sm" type="date" name="activity[startdate]" id="activity_startdate" />
-      </div>
-      <div class="col-xs-2">
-        <label for="activity_enddate">End Date</label>
-        <span class="required-field-marker">*</span>
-        <input class="form-control input-sm" type="date" name="activity[enddate]" id="activity_enddate" />
-      </div>
-    </div>
-    
-    <div class="row form-group">
-      <div class="col-xs-3 col-xs-offset-2">
-        <label for="activity_description">Description</label>
-        <span class="required-field-marker">*</span>
-        <input class="form-control input-sm" type="text" name="activity[description]" id="activity_description" />
-      </div>
-      <div class="col-xs-2">
-        <label for="activity_goal">Goal</label>
-        <span class="required-field-marker">*</span>
-        <input class="form-control input-sm" type="text" name="activity[goal]" id="activity_goal" />
-      </div>
-      <div class="col-xs-2"> &nbsp; </div>
-    </div>
-
-    <div class="row form-group">
-      <div class="col-xs-8  col-xs-offset-2">
-        <label for="activity_notes">Notes</label>
-        <textarea class="form-control" rows="5" id="activity_notes"></textarea>
-      </div>
-    </div>
-
-    <div class="row form-group">
-      <div class="col-xs-4 col-xs-offset-4 text-center">
-        <input type="submit" name="commit" value="Create Activity" class="btn btn-success" />
-        &nbsp;
-        <input type="reset" name="cancel" value="Cancel" class="btn btn-danger" />
-      </div>
-    </div>
-  </form>
+  <%=render 'form' %>
 </div>
