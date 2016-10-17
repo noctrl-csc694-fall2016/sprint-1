@@ -13,3 +13,24 @@ Activity.create!( name: "Golf Outing",
                   description: "Fun",
                   goal: "400",
                   notes: "Contact Jen for more information.")
+                  
+Activity.create!( name: "Labor Day Mailer",
+                  start_date: "2016-07-09 00:00:00 UTC",
+                  end_date: "2016-08-19 00:00:00 UTC",
+                  description: "Fun",
+                  goal: "600",
+                  notes: "Contact Jen for more information.")
+                  
+Activity.create!( name: "Food Truck",
+                  start_date: "2016-07-09 01:00:00 UTC",
+                  end_date: "2016-07-09 03:00:00 UTC",
+                  description: "Fun",
+                  goal: "100",
+                  notes: "Contact Jen for more information.")
+                
+Activity.create!( name: "Food Truck",
+                  start_date: "2016-07-16 01:00:00 UTC",
+                  end_date: "2016-07-16 03:00:00 UTC",
+                  description: "Fun",
+                  goal: "100",
+                  notes: "Contact Jen for more information.")

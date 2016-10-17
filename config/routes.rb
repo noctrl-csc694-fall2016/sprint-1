@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   
   resources :gifts
   resources :donors
-  resources :activities
+  resources :activities, only: [:new, :create, :edit, :update, :index, :destroy]
 
   get    '/home',    to: 'static_pages#home'
   get    '/help',    to: 'static_pages#help'

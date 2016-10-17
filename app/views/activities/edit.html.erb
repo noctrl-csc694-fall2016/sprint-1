@@ -1,9 +1,19 @@
 <% provide(:title, "Edit Activity") %>
 <% provide(:button_text, "Update") %>
 <div class="row">
-  <div class="col-sm-10 col-xs-offset-2">
+  <div class="col-sm-8 col-xs-offset-2">
   	<div class="page-header">
   		<h2>Edit Activity <small>&nbsp; Update this Activity or surf its Gifts</small></h2>
+  		<aside class="text-right">
+  		  <div>
+      		Surf to: 
+          		<%=link_to "All Gifts for this Activity", "#" %>
+        </div>
+        <div>
+          <%= link_to "Delete activity", @activity, method: :delete,
+                                                          data: { confirm: "You sure?" } %>
+        </div>
+  		</aside>
   	</div>
   </div>
 </div>

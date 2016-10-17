@@ -1,5 +1,6 @@
 <%= form_for(@activity) do |f| %>
     <div class="row form-group">
+      <%= render 'shared/error_messages' %>
       <div class="col-xs-3 col-xs-offset-2">
         <%= f.label :name %>
         <span class="required-field-marker">*</span>
@@ -8,12 +9,12 @@
       <div class="col-xs-2">
         <%= f.label :start_date %>
         <span class="required-field-marker">*</span>
-        <%= f.date_field :start_date, class: 'form-control input-sm' %>
+        <%= f.datetime_field :start_date, class: 'form-control input-sm' %>
       </div>
       <div class="col-xs-2">
         <%= f.label :end_date %>
         <span class="required-field-marker">*</span>
-        <%= f.date_field :end_date, class: 'form-control input-sm' %>
+        <%= f.datetime_field :end_date, class: 'form-control input-sm' %>
       </div>
     </div>
     
