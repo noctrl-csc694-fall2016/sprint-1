@@ -12,6 +12,11 @@ class GiftsController < ApplicationController
     @activities = Activity.all.map { |activity| [ activity.name, activity.id ] }
   end
   
+  def import
+    Gift.import(params[:file])
+    redirect_to root_url, notice: "Gifts imported."
+  end
+end
   def create
     @gift = Gift.new(gift_params)
     @donors = Donor.all.map { |donor| [ "#{donor.first_name} #{donor.last_name}", donor.id ] }
@@ -49,4 +54,4 @@ class GiftsController < ApplicationController
       params.required(:gift).permit(:activity_id, :donor_id, :donation_date, :amount, :gift_type, :notes)
     end
   
-end
+
