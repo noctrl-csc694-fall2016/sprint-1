@@ -40,20 +40,25 @@
 <!-- Export content -->
 <div class="row report-row">
 	<div class="col-xs-8 col-xs-offset-2"> 
-	<%= link_to('import-export/export') do %>
+	<%= link_to('import-export/export.csv') do %>
 	<span class="glyphicon glyphicon-wrench export-icon export-color"></span>
 	<span class="report-title">MailChimp</span>
 	<% end %>
 	<span class="report-description">- export contact info to MailChimp</span> 
 	</div>
 </div>
-
 <div class="row report-row">
 	<div class="col-xs-8 col-xs-offset-2"> 
-	<%= link_to('import-export/export') do %>
+	<%= link_to('import-export/export.csv') do %>
 	<span class="glyphicon glyphicon-wrench export-icon export-color"></span>
 	<span class="report-title">Contstant Contact</span>
 	<% end %>
 	<span class="report-description">- export contact info to Constant Contact</span> 
 	</div>
 </div>
+
+<script>
+	$(document).ready(function() {
+		
+	});
+</script>

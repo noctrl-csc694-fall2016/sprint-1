@@ -1,8 +1,16 @@
 Rails.application.routes.draw do
   
-  resources :gifts
-  resources :donors
-  resources :activities, only: [:new, :create, :edit, :update, :index, :destroy]
+  resources :gifts do
+    collection { post :import }
+  end
+  
+  resources :donors do
+    collection { post :import }
+  end
+  
+  resources :activities, only: [:new, :create, :edit, :update, :index, :destroy] do
+    collection { post :import }
+  end
 
   get    '/home',    to: 'static_pages#home'
   get    '/help',    to: 'static_pages#help'

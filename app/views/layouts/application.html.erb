@@ -17,6 +17,9 @@
   <body>
     <%= render 'layouts/header' %>
     <div class="container-fluid container-donna page-content">
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, class: "alert alert-info" %>
+      <% end %>
       <%= yield %>
     </div>
     <%= render 'layouts/footer' %>

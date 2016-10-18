@@ -37,6 +37,10 @@ class ActivitiesController < ApplicationController
     redirect_to activities_path
   end
   
+  def import
+    Activity.import(params[:file])
+    redirect_to root_url, notice: "Activities imported."
+  end
   
   private
     def activity_params
