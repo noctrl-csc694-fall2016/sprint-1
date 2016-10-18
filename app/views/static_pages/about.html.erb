@@ -9,7 +9,8 @@
 </div>
 <!-- Content -->
 <div class="row col-xs-offset-2">
-    Paths To Know
+    <h3>Paths</h3>
+    Static Pages Controller
         <ul>
             <li><%= link_to "Front Page", root_path %></li>
             <li><%= link_to "About", about_path %></li>
@@ -19,59 +20,33 @@
             <li><%= link_to "Import Specific", import_export_import_path %></li>
             <li><%= link_to "Export Specific", import_export_export_path %></li>
             <li><%= link_to "Inkind Specific", import_export_inkind_path %></li>
-            <li>Edit Gift Coming Soon</li>
-            <li>Edit Gift Coming Soon</li>
-            <li>Edit Gift Coming Soon</li>
-            <li>Edit Gift Coming Soon</li>
             <li><%= link_to "Reports", reports_path %></li>
+        </ul>
+    Import Export Controller
+        <ul>
+            <li><%= link_to "Requested via Import Export Page", import_export_path %></li>
+        </ul>
+    Activities Controller
+        <ul>
+            <li><%= link_to "All Activities", activities_path %></li>
             <li><%= link_to "Create Activity", new_activity_path %></li>
-            <li>Edit Activity Coming Soon</li>
+            <li><%= link_to "Edit Activity (ID: 1)", edit_activity_path(:id => "1") %></li>
+        </ul>
+    Donors Controller
+        <ul>
+            <li><%= link_to "All Donors", donors_path %></li>
             <li><%= link_to "Create Donor", new_donor_path %></li>
-            <li>Edit Donor Coming Soon</li>
+            <li><%= link_to "Donor (ID: 2)", edit_donor_path(:id => "2") %></li>
+        </ul>
+    Gifts Controller
+        <ul>
+            <li><%= link_to "All Gifts", gifts_path %></li>
             <li><%= link_to "Create Gift", new_gift_path %></li>
             <li>Edit Gift Coming Soon</li>
         </ul>
     
+    <h3>Information Fill</h3>
         <p>Welcome To Donna Donor!  A web application built by North Central College CSC
-    694 Class of Fall 2016!</p>
-    
-    <b>Team</b>
-    <ul>
-        <li>Bill K</li>
-        <li>Andy W</li>
-        <li>Mike D</li>
-        <li>Pat M</li>
-        <li>Wei H</li>
-        <li>Jason K</li>
-    </ul>
-    
-        <p>Welcome To Donna Donor!  A web application built by North Central College CSC
-    694 Class of Fall 2016!</p>
-    
-    <b>Team</b>
-    <ul>
-        <li>Bill K</li>
-        <li>Andy W</li>
-        <li>Mike D</li>
-        <li>Pat M</li>
-        <li>Wei H</li>
-        <li>Jason K</li>
-    </ul>
-    
-        <p>Welcome To Donna Donor!  A web application built by North Central College CSC
-    694 Class of Fall 2016!</p>
-    
-    <b>Team</b>
-    <ul>
-        <li>Bill K</li>
-        <li>Andy W</li>
-        <li>Mike D</li>
-        <li>Pat M</li>
-        <li>Wei H</li>
-        <li>Jason K</li>
-    </ul>
-    
-            <p>Welcome To Donna Donor!  A web application built by North Central College CSC
     694 Class of Fall 2016!</p>
     
     <b>Team</b>

@@ -1,0 +1,70 @@
+<%= form_for(@donor) do |f| %>
+  	<div class="row form-group">
+  	   <%= render 'shared/donor_error_messages' %>
+    	<div class="col-xs-2 col-xs-offset-2">
+      	<%= f.label :first_name %>
+      	<span class="required-field-marker">*</span>
+        <%= f.text_field :first_name, class: 'form-control input-sm' %>
+      </div>
+      <div class="col-xs-2">
+      	<%= f.label :last_name %>
+      	<span class="required-field-marker">*</span>
+        <%= f.text_field :last_name, class: 'form-control input-sm' %>
+      </div>
+    </div> <!-- row -->
+
+    <div class="row form-group">
+    	<div class="col-xs-4 col-xs-offset-2">
+      	<%= f.label :address %>
+        <span class="required-field-marker">*</span>
+        <%= f.text_field :address, class: 'form-control input-sm' %>
+      </div>
+    </div>   <!-- row -->
+
+    <div class="row form-group">
+     	<div class="col-xs-4 col-xs-offset-2">
+      	<%= f.label :address2 %>
+        <%= f.text_field :address2, class: 'form-control input-sm' %>
+      </div>
+    </div>   <!-- row -->
+
+    <div class="row form-group">
+      <div class="col-xs-2 col-xs-offset-2">
+        <%= f.label :city %>
+        <span class="required-field-marker">*</span>
+        <%= f.text_field :city, class: 'form-control input-sm' %>
+      </div>
+      <div class="col-xs-2">
+      	<%= f.label :state %>
+        <span class="required-field-marker">*</span>
+        <%= f.text_field :state, class: 'form-control input-sm' %>
+      </div>
+
+      <div class="col-xs-2">
+      	<%= f.label :zip %>
+        <span class="required-field-marker">*</span>
+        <%= f.text_field :zip, class: 'form-control input-sm' %>
+      </div>
+		</div>   <!-- row -->
+
+		<div class="row form-group">
+	    <div class="col-xs-4 col-xs-offset-2">
+	        <%= f.label :email %>
+	        <span class="required-field-marker">*</span>
+	        <%= f.text_field :email, class: 'form-control input-sm' %>
+	    </div>
+	    <div class="col-xs-2">
+	      <%= f.label :phone %>
+	      <%= f.text_field :phone, class: 'form-control input-sm' %>
+	    </div>
+		</div>   <!-- row -->
+
+		<div class=" row form-group">
+      <div class="col-xs-8 col-xs-offset-1 text-center">
+          <%= f.submit yield(:button_text), class: "btn btn-success" %>
+        &nbsp;
+        <%= link_to "Cancel", donors_path, class: "btn btn-danger" %>
+      </div>
+  	</div>   <!-- row -->
+ 	
+ <% end %>

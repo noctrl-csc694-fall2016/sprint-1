@@ -1,12 +1,14 @@
 <%= form_for(@activity) do |f| %>
     <div class="row form-group">
-      <%= render 'shared/error_messages' %>
-      <div class="col-xs-3 col-xs-offset-2">
+      <%= render 'shared/activity_error_messages' %>
+      <div class="col-xs-5 col-xs-offset-2">
         <%= f.label :name %>
         <span class="required-field-marker">*</span>
         <%= f.text_field :name, class: 'form-control input-sm' %> 
       </div>
-      <div class="col-xs-2">
+    </div>
+    <div class="row form-group">
+      <div class="col-xs-2 col-xs-offset-2">
         <%= f.label :start_date %>
         <span class="required-field-marker">*</span>
         <%= f.datetime_field :start_date, class: 'form-control input-sm' %>
@@ -16,26 +18,26 @@
         <span class="required-field-marker">*</span>
         <%= f.datetime_field :end_date, class: 'form-control input-sm' %>
       </div>
-    </div>
-    
-    <div class="row form-group">
-      <div class="col-xs-3 col-xs-offset-2">
-        <%= f.label :description %>
-        <span class="required-field-marker">*</span>
-        <%= f.text_field :description, class: 'form-control input-sm' %> 
-      </div>
-      <div class="col-xs-2">
+      <div class="col-xs-1">
         <%= f.label :goal %>
         <span class="required-field-marker">*</span>
         <%= f.number_field :goal, class: 'form-control input-sm' %> 
+      </div>
+    </div>
+    
+    <div class="row form-group">
+      <div class="col-xs-5 col-xs-offset-2">
+        <%= f.label :description %>
+        <span class="required-field-marker">*</span>
+        <%= f.text_field :description, class: 'form-control input-sm' %> 
       </div>
       <div class="col-xs-2"> &nbsp; </div>
     </div>
 
     <div class="row form-group">
-      <div class="col-xs-8  col-xs-offset-2">
+      <div class="col-xs-5  col-xs-offset-2">
         <%= f.label :notes %></br>
-        <%= f.text_area :notes, placeholder: "Enter notes here...", cols: "120", rows: "5", class: "form_control, input-sm" %>
+        <%= f.text_area :notes, placeholder: "Enter notes here...", cols: "125", rows: "5", class: "form_control, input-sm" %>
       </div>
     </div>
 
