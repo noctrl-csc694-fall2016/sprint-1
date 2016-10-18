@@ -25,7 +25,7 @@
         <tr>
           <td>Name</td>
           <td>Gifts</td>
-          <td>Total Gift $</td>
+          <td>Total Gift</td>
           <td>Last Gift</td>
           <td>Last Activity</td>
         </tr>
@@ -34,10 +34,10 @@
         <% @donors.each do |donor| %>
         <tr>
           <td><%= link_to "#{donor.first_name} #{donor.last_name}", edit_donor_path(donor) %></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td><%= gift_count(donor) %></td>
+          <td>$<%= gift_total(donor) %></td>
+          <td>$<%= last_gift(donor) %></td>
+          <td><%= last_activity(donor) %></td>
         </tr>
         <% end %>
       </tbody>

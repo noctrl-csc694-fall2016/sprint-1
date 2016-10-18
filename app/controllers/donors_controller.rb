@@ -39,7 +39,7 @@ class DonorsController < ApplicationController
   
   private
     def donor_params
-      params.required(:donor).permit(:name, :address, :address2, :city,
+      params.required(:donor).permit(:first_name, :last_name, :address, :address2, :city,
        :state, :zip, :phone, :email, :notes)
     end
 end

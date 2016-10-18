@@ -35,7 +35,7 @@
           <td><%= link_to activity.name, edit_activity_path(activity) %></td>
           <td><%= activity.end_date.strftime("%m/%d/%y") %></td>
           <td><%= number_to_currency(activity.goal) %></td>
-          <td></td>
+          <td><%= progress(activity) %>%</td>
         </tr>
         <% end %>
       </tbody>

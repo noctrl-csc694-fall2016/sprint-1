@@ -1,5 +1,5 @@
 class Activity < ApplicationRecord
-  has_many :gifts
+  has_many :gifts, dependent: :destroy
   default_scope -> {order(created_at: :desc)}
   validates :name, presence: true, length: {maximum:255}
   validates :description, presence: true, length: {maximum:255}

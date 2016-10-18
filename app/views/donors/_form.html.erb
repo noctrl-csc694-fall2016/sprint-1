@@ -30,6 +30,11 @@
 
     <div class="row form-group">
       <div class="col-xs-2 col-xs-offset-2">
+        <%= f.label :city %>
+        <span class="required-field-marker">*</span>
+        <%= f.text_field :city, class: 'form-control input-sm' %>
+      </div>
+      <div class="col-xs-2">
       	<%= f.label :state %>
         <span class="required-field-marker">*</span>
         <%= f.text_field :state, class: 'form-control input-sm' %>
@@ -47,6 +52,10 @@
 	        <%= f.label :email %>
 	        <span class="required-field-marker">*</span>
 	        <%= f.text_field :email, class: 'form-control input-sm' %>
+	    </div>
+	    <div class="col-xs-2">
+	      <%= f.label :phone %>
+	      <%= f.text_field :phone, class: 'form-control input-sm' %>
 	    </div>
 		</div>   <!-- row -->
 

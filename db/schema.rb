@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 20161012184244) do
   create_table "gifts", force: :cascade do |t|
     t.integer  "donor_id"
     t.integer  "activity_id"
-    t.datetime "donation_date"
+    t.date     "donation_date"
     t.float    "amount"
     t.string   "gift_type"
     t.text     "notes"

@@ -32,8 +32,8 @@
       <tbody>
         <% @gifts.each do |gift| %>
         <tr>
-          <td><%= link_to gift.activity, edit_gift_path(gift) %></td>
-          <td><%= gift.donor %></td>
+          <td><%= link_to Activity.find(gift.activity).name, edit_gift_path(gift) %></td>
+          <td><%= Donor.find(gift.donor).first_name + " " + Donor.find(gift.donor).last_name %></td>
           <td><%= gift.donation_date %></td>
           <td><%= number_to_currency(gift.amount) %></td>
         </tr>

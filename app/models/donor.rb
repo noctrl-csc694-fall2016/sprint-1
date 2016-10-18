@@ -1,5 +1,5 @@
 class Donor < ApplicationRecord
-  has_many :gifts
+  has_many :gifts, dependent: :destroy
   default_scope -> {order(created_at: :desc)}
   validates :first_name, presence: true, length: {maximum:50}
   validates :last_name, presence: true, length: {maximum:50}
