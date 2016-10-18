@@ -34,3 +34,24 @@ Activity.create!( name: "Food Truck",
                   description: "Fun",
                   goal: "100",
                   notes: "Contact Jen for more information.")
+                  
+Donor.create!( first_name: "Joe",
+                  last_name: "Donor",
+                  address: "101 College Lane",
+                  address2: "APT 2",
+                  city: "Naperville",
+                  state: "IL",
+                  zip: "60564",
+                  phone: "815-555-5551",
+                  email: "joe.donor@ncc.edu",
+                  notes: "Example donor.")
+                  
+Donor.create!( first_name: "Jane",
+                  last_name: "Brown",
+                  address: "455 Summit Ave",
+                  city: "Downers Grove",
+                  state: "IL",
+                  zip: "60555",
+                  phone: "815-555-5552",
+                  email: "janeb@hotmail.com",
+                  notes: "Example donor #2.")

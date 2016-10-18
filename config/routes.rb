@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
-  resources :gifts
-  resources :donors
+  resources :gifts, only: [:new, :create, :edit, :update, :index, :destroy]
+  resources :donors, only: [:new, :create, :edit, :update, :index, :destroy]
   resources :activities, only: [:new, :create, :edit, :update, :index, :destroy]
 
   get    '/home',    to: 'static_pages#home'

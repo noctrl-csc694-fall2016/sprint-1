@@ -24,7 +24,8 @@ ActiveRecord::Schema.define(version: 20161012184244) do
   end
 
   create_table "donors", force: :cascade do |t|
-    t.string   "name"
+    t.string   "first_name"
+    t.string   "last_name"
     t.string   "address"
     t.string   "address2"
     t.string   "city"
@@ -40,11 +41,12 @@ ActiveRecord::Schema.define(version: 20161012184244) do
   create_table "gifts", force: :cascade do |t|
     t.integer  "donor_id"
     t.integer  "activity_id"
+    t.datetime "donation_date"
     t.float    "amount"
-    t.string   "type"
+    t.string   "gift_type"
     t.text     "notes"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.index ["activity_id"], name: "index_gifts_on_activity_id"
     t.index ["donor_id"], name: "index_gifts_on_donor_id"
   end
