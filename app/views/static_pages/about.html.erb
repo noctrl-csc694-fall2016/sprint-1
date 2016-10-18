@@ -34,13 +34,13 @@
         </ul>
     Donors Controller
         <ul>
-            <li>All Donors Link Coming Soon</li>
+            <li><%= link_to "All Donors", donors_path %></li>
             <li><%= link_to "Create Donor", new_donor_path %></li>
-            <li>Edit Donor Coming Soon</li>
+            <li><%= link_to "Donor (ID: 2)", edit_donor_path(:id => "2") %></li>
         </ul>
     Gifts Controller
         <ul>
-            <li>All Gifts Link Coming Soon</li>
+            <li><%= link_to "All Gifts", gifts_path %></li>
             <li><%= link_to "Create Gift", new_gift_path %></li>
             <li>Edit Gift Coming Soon</li>
         </ul>

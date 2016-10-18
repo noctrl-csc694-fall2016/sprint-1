@@ -35,7 +35,7 @@
           <td><%= link_to gift.activity, edit_gift_path(gift) %></td>
           <td><%= gift.donor %></td>
           <td><%= gift.donation_date %></td>
-          <td><%= gift.amount %></td>
+          <td><%= number_to_currency(gift.amount) %></td>
         </tr>
         <% end %>
       </tbody>
