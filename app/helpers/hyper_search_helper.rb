@@ -1,0 +1,2 @@
+module HyperSearchHelper
+end
