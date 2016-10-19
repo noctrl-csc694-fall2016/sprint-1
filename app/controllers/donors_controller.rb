@@ -21,7 +21,7 @@ class DonorsController < ApplicationController
   def create
     @donor = Donor.new(donor_params)
     if @donor.save
-      # flash[:success] = "Activty added successfully!"
+      flash[:success] = "Activty added successfully!"
       redirect_to donors_url
     else
       render 'new'
@@ -33,7 +33,7 @@ class DonorsController < ApplicationController
     @donor = Donor.find(params[:id])
     if @donor.update(donor_params)
        redirect_to donors_url
-      # flash[:success] = "Donor updated successfully!"
+      flash[:success] = "Donor updated successfully!"
     else
       render 'edit'
     end

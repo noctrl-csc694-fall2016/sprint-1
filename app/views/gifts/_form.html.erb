@@ -1,10 +1,22 @@
 <%=form_for(@gift) do |f| %>
-  <div class="row form-group">
-    <%=render 'shared/gift_error_messages' %>
-      <div class="col-xs-2 col-xs-offset-2">
-        <div class="line-break">
-          <%=f.label :donor %>
-            <span class="required-field-marker">*</span>
+    <div class="row form-group">
+        <%=render 'shared/gift_error_messages' %>
+            <div class="col-xs-2 col-xs-offset-2">
+                <div class="line-break">
+                    <%=f.label :donor %>
+                        <span class="required-field-marker">*</span>
+                </div><%= @donor_id %>
+                <%=f.select :donor_id, options_for_select(@donors, :selected => params[:donor_id]), include_blank: "Select a donor", class: 'form-control input-sm' %>
+            </div>
+    </div>
+    <!-- row -->
+    <div class="row form-group">
+        <div class="col-xs-4 col-xs-offset-2">
+            <div class="line-break">
+                <%=f.label :activity %>
+                    <span class="required-field-marker">*</span>
+            </div>
+            <%=f.select :activity_id, @activities, prompt: "Select an activity", class: 'form-control input-sm' %>
         </div>
         <%=f.select :donor_id, @donors, prompt: "Select a donor", class: 'form-control input-sm' %>
       </div>

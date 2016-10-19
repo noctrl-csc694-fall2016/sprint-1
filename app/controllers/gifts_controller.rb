@@ -36,7 +36,7 @@ class GiftsController < ApplicationController
     @donors = Donor.all.map { |donor| [ "#{donor.first_name} #{donor.last_name}", donor.id ] }
     @activities = Activity.all.map { |activity| [ activity.name, activity.id ] }
     if @gift.save
-      # flash[:success] = "Gift added successfully!"
+      flash[:success] = "Gift added successfully!"
       redirect_to gifts_url
     else
       render 'new'
@@ -50,7 +50,7 @@ class GiftsController < ApplicationController
     @gift = Gift.find(params[:id])
     if @gift.update(gift_params)
        redirect_to gifts_url
-      # flash[:success] = "Gift updated successfully!"
+       flash[:success] = "Gift updated successfully!"
     else
       render 'edit'
     end
@@ -58,7 +58,6 @@ class GiftsController < ApplicationController
   
   #list all gifts on index page
   def index
-    @gift = Gift.new
     @gifts = Gift.all
     @donors = Donor.all.map { |donor| [ "#{donor.first_name} #{donor.last_name}", donor.id ] }
     @activities = Activity.all.map { |activity| [ activity.name, activity.id ] }
@@ -69,9 +68,6 @@ class GiftsController < ApplicationController
     Gift.find(params[:id]).destroy
     flash[:success] = "Gift deleted."
     redirect_to gifts_path
-  end
-  
-  def search
   end
   
   private

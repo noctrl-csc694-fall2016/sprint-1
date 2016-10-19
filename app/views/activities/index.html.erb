@@ -9,8 +9,8 @@
 		    <% end %>
   		  <div>
       		Surf to: 
-          		<%=link_to "All Gifts", gifts_url %>
-          		<%=link_to "All Donors", donors_url %>
+      		  <%=link_to "All Donors", donors_url %>
+          	<%=link_to "All Gifts", gifts_url %>
         </div>
   		</aside>
   	</div>
@@ -24,18 +24,22 @@
       <thead>
         <tr>
           <td>Name</td>
-          <td>Date</td>
+          <td>End Date</td>
           <td>Goal</td>
           <td>Progress</td>
+          <td>Donors</td>
+          <td>Gifts</td>
         </tr>
       </thead>
       <tbody>
         <% @activities.each do |activity| %>
         <tr>
           <td><%= link_to activity.name, edit_activity_path(activity) %></td>
-          <td><%= activity.end_date.strftime("%m/%d/%y") %></td>
+          <td><%= activity.end_date %></td>
           <td><%= number_to_currency(activity.goal) %></td>
           <td><%= progress(activity) %>%</td>
+          <td></td>
+          <td><%= gift_count_per_activity(activity) %></td>
         </tr>
         <% end %>
       </tbody>
