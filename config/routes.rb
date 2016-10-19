@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   resources :activities, only: [:new, :create, :edit, :update, :index, :destroy] do
     collection { post :import }
   end
+  
+  # resources :gifts
+  # resources :donors
+  # resources :activities
 
   get    '/home',    to: 'static_pages#home'
   get    '/help',    to: 'static_pages#help'

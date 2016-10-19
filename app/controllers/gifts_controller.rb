@@ -16,7 +16,7 @@ class GiftsController < ApplicationController
     Gift.import(params[:file])
     redirect_to root_url, notice: "Gifts imported."
   end
-end
+
   def create
     @gift = Gift.new(gift_params)
     @donors = Donor.all.map { |donor| [ "#{donor.first_name} #{donor.last_name}", donor.id ] }
@@ -40,7 +40,10 @@ end
   end
   
   def index
+    @gift = Gift.new
     @gifts = Gift.all
+    @donors = Donor.all.map { |donor| [ "#{donor.first_name} #{donor.last_name}", donor.id ] }
+    @activities = Activity.all.map { |activity| [ activity.name, activity.id ] }
   end
   
   def destroy
@@ -49,9 +52,12 @@ end
     redirect_to gifts_path
   end
   
+  def search
+  end
+  
   private
     def gift_params
       params.required(:gift).permit(:activity_id, :donor_id, :donation_date, :amount, :gift_type, :notes)
     end
-  
+end
 

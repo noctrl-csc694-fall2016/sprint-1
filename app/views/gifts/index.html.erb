@@ -17,6 +17,12 @@
   </div>
 </div>
 
+<!--dropdown for activity and donor-->
+<div class="row">
+  <%= render 'search' %>
+</div>
+
+<!--Table -- list all requested gifts-->
 <div class="row">
   <div class="col-sm-8 col-xs-offset-2">
     <% if @gifts.count != 0 %>

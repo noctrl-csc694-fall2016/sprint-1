@@ -25,6 +25,8 @@ class DonorsController < ApplicationController
     else
       render 'edit'
     end
+  end
+  
   def import
     Donor.import(params[:file])
     redirect_to root_url, notice: "Donors imported."
@@ -40,7 +42,7 @@ class DonorsController < ApplicationController
       end
     end
   end
-  end
+  
   
   def destroy
     Donor.find(params[:id]).destroy
