@@ -21,7 +21,8 @@ Rails.application.routes.draw do
   get 'import-export/inkind'
   get 'import-export/export'
   
-  get    '/hyper-search/donors', to: 'hyper_search#donors'
+  get    '/hyper-surf/donors', to: 'hyper_surf#donors'
+  get    '/hyper-surf/all', to: 'hyper_surf#all'
   
   root 'static_pages#home'
 end
