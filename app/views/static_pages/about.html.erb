@@ -75,7 +75,12 @@
       <li>
         <%=link_to "Create Gift", new_gift_path %>
       </li>
-      <li>Edit Gift Coming Soon</li>
+      <li><%=link_to "Edit Gift (ID: 5)", edit_gift_path(:id=> "5") %></li>
+    </ul>
+    HyperSurf
+    <ul>
+      <li><%=link_to "General Surf", hyper_surf_all_path %></li>
+      <li><%=link_to "Donor Surf", hyper_surf_donors_path %></li>
     </ul>
 
     <h3>Information Fill</h3>
