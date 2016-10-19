@@ -53,5 +53,4 @@ class GiftsController < ApplicationController
     def gift_params
       params.required(:gift).permit(:activity_id, :donor_id, :donation_date, :amount, :gift_type, :notes)
     end
-  
-
+end

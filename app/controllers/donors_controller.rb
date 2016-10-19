@@ -25,6 +25,8 @@ class DonorsController < ApplicationController
     else
       render 'edit'
     end
+  end
+    
   def import
     Donor.import(params[:file])
     redirect_to root_url, notice: "Donors imported."
@@ -34,11 +36,11 @@ class DonorsController < ApplicationController
     @donors = Donor.all
     respond_to do |format|
       format.html
-      format.pdf do
-        pdf = ReportPdf.new(@donors)
-        send_data pdf.render, filename: 'report.pdf', type: 'application/pdf'
+        format.pdf do
+          pdf = ReportPdf.new(@donors)
+          send_data pdf.render, filename: 'report.pdf', type: 'application/pdf'
+        end
       end
-    end
   end
   
   def destroy
