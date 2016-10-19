@@ -40,7 +40,6 @@ class DonorsController < ApplicationController
       end
     end
   end
-  end
   
   def destroy
     Donor.find(params[:id]).destroy

@@ -16,7 +16,7 @@ class GiftsController < ApplicationController
     Gift.import(params[:file])
     redirect_to root_url, notice: "Gifts imported."
   end
-end
+  
   def create
     @gift = Gift.new(gift_params)
     @donors = Donor.all.map { |donor| [ "#{donor.first_name} #{donor.last_name}", donor.id ] }
