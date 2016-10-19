@@ -10,10 +10,6 @@ Rails.application.routes.draw do
     collection { post :import }
   end
   
-  # resources :gifts
-  # resources :donors
-  # resources :activities
-
   get    '/home',    to: 'static_pages#home'
   get    '/help',    to: 'static_pages#help'
   get    '/about',   to: 'static_pages#about'

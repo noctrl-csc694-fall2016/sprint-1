@@ -8,29 +8,29 @@
 
 # Create sample activties
 Activity.create!( name: "Golf Outing 2015",
-                  start_date: "2016-09-09 00:00:00 UTC",
-                  end_date: "2016-09-19 00:00:00 UTC",
+                  start_date: "2016-09-09",
+                  end_date: "2016-09-19",
                   description: "Fun",
                   goal: "400",
                   notes: "Contact Jen for more information.")
                   
-Activity.create!( name: "Labor Day Mailer",
-                  start_date: "2016-07-09 00:00:00 UTC",
-                  end_date: "2016-08-19 00:00:00 UTC",
-                  description: "Fun",
-                  goal: "600",
+Activity.create!( name: "General",
+                  start_date: "2016-07-09",
+                  end_date: "2016-08-19",
+                  description: "The more the better.",
+                  goal: "0",
                   notes: "Contact Jen for more information.")
                   
 Activity.create!( name: "Color Marathon",
-                  start_date: "2016-07-09 01:00:00 UTC",
-                  end_date: "2016-07-09 03:00:00 UTC",
+                  start_date: "2016-07-09",
+                  end_date: "2016-07-09",
                   description: "Fun",
                   goal: "5000",
                   notes: "Contact Jen for more information.")
                 
 Activity.create!( name: "Food Truck",
-                  start_date: "2016-07-16 01:00:00 UTC",
-                  end_date: "2016-07-16 03:00:00 UTC",
+                  start_date: "2016-07-16",
+                  end_date: "2016-07-16",
                   description: "Fun",
                   goal: "100",
                   notes: "Contact Jen for more information.")
