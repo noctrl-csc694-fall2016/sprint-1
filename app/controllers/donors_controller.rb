@@ -38,6 +38,7 @@ class DonorsController < ApplicationController
       render 'edit'
     end
   end
+  
     
   def import
     Donor.import(params[:file])
@@ -55,6 +56,9 @@ class DonorsController < ApplicationController
         end
       end
   end
+  
+  
+  
   
   # delete donor
   def destroy
