@@ -1,39 +1,27 @@
 <!-- 3. Footer at bottom... it's sticky -->
 <footer class="footer">
-	<div class="container">
-		<div class="footer-text">
-			<div class="col-xs-6">
-				&copy; 2016
-			</div>
-			<div class="col-xs-1 text-right">
-				<%= link_to "Home",    root_path %>
-			</div>
-			<div class="col-xs-1 text-right">
-				<%= link_to "About",    about_path %>
-			</div>
-			<div class="col-xs-1 text-right">
-				<%= link_to "Help",    help_path %>
-			</div>
-			<div class="col-xs-1 text-right">
-				<%= link_to "Contact",    contact_path %>
-			</div>
-		</div>
-	</div>
+  <div class="container">
+    <div class="footer-text">
+      <div class="col-xs-6">
+        &copy; 2016
+      </div>
+      <div class="col-xs-1 text-right">
+        <%= link_to "Home",    root_path %>
+      </div>
+      <div class="col-xs-1 text-right">
+        <%= link_to "About",    about_path %>
+      </div>
+      <div class="col-xs-1 text-right">
+        <%= link_to "Help",    help_path %>
+      </div>
+      <div class="col-xs-1 text-right">
+        <%= link_to "Contact",    contact_path %>
+      </div>
+    </div>
+  </div>
 </footer>
 <script>
-  /*
-  <!-- My source for this nice implementation of a Bootstrap collapsible panel is: -->
-  <!-- http://www.bootply.com/89084 -->  
-  */
-  $(function () {
-  	$('.collapse').on('shown.bs.collapse', function(){
-  	$(this).parent().find(".glyphicon-plus").removeClass("glyphicon-plus").addClass("glyphicon-minus");
-  	}).on('hidden.bs.collapse', function(){
-  	$(this).parent().find(".glyphicon-minus").removeClass("glyphicon-minus").addClass("glyphicon-plus");
-  	});
-  });
   $(function() {
-
   /* Shorten the banner on scroll */
   $(window).scroll(function() {
     var x = $(window).scrollTop();
@@ -51,6 +39,5 @@
       $(".navbar-donna-search").css("margin-top", "40px");
     }
   });
-
 });
 </script>
