@@ -1,5 +1,10 @@
+/* Bootstrap Inclusion*/
 @import "bootstrap-sprockets";
 @import "bootstrap";
+/* FontAwesome Inclusion*/
+@import "font-awesome-sprockets";
+@import "font-awesome";
+/* Custom Google Fonts */
 @import url('https://fonts.googleapis.com/css?family=Exo:600i|Open+Sans');
 
 /* Core CSS */
@@ -200,6 +205,10 @@ a.glow:hover, a.glow:focus
 }
 .report-description{
 	font-size: 1.5em;
+}
+.report-icon{
+	font-size: 1.5em;
+	font-weight: bold;
 }
 
 /* Footer CSS */
