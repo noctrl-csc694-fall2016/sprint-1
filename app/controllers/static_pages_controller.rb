@@ -1,3 +1,10 @@
+  #----------------------------------#
+  # Static Pages Controller
+  # original written by: Jason K, Oct 17 2016
+  # major contributions by:
+  #
+  #----------------------------------#
+  
 class StaticPagesController < ApplicationController
   def home
   end
