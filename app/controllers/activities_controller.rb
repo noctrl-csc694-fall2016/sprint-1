@@ -1,36 +1,50 @@
 class ActivitiesController < ApplicationController
+  #----------------------------------#
+  # GiftGarden Activities Controller
+  # original written by: Wei H, Oct 15 2016
+  # major contributions by:
+  #
+  #----------------------------------#
+  
+  # defines a new activity
   def new
     @activity = Activity.new
   end
-
+  
+  # find activity by id and populate edit screen
   def edit
     @activity = Activity.find(params[:id])
   end
   
+  #create new activity, or render edit page with errors list
+  #activity_params defined in private below
   def create
     @activity = Activity.new(activity_params)
     if @activity.save
-      # flash[:success] = "Activty added successfully!"
+      flash[:success] = "Activty added successfully!"
       redirect_to activities_url
     else
       render 'new'
     end
   end
   
+  #update activity, or render edit page with errors list
   def update
     @activity = Activity.find(params[:id])
     if @activity.update(activity_params)
        redirect_to activities_url
-      # Handle a successful update.
+       flash[:success] = "Activty updated successfully!"
     else
       render 'edit'
     end
   end
   
+  #list all activities on index page
   def index
     @activities = Activity.all
   end
   
+  #delete activity
   def destroy
     Activity.find(params[:id]).destroy
     flash[:success] = "Activity deleted."
@@ -43,6 +57,7 @@ class ActivitiesController < ApplicationController
   end
   
   private
+    #define activity parameters accepted and required for create and update methods
     def activity_params
       params.required(:activity).permit(:name, :start_date, :end_date, :description,
        :goal, :notes)

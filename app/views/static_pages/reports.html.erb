@@ -11,7 +11,7 @@
   <div class="row report-row">
     <div class="col-xs-8 col-xs-offset-2">
       <%= link_to(reports_path) do %>
-    	  <span class="glyphicon glyphicon-asterisk report-icon"></span>
+    	  <%= icon("ship", class: "report-icon") %>
     	  <span class="report-title">Activity</span>
     	<% end %>
     	<span class="report-description">- report the donors and gifts for an Activity</span>
@@ -31,7 +31,7 @@
   <div class="row report-row">
     <div class="col-xs-8 col-xs-offset-2"> 
     <%= link_to(reports_path) do %>
-    	  <span class="glyphicon glyphicon-list-alt report-icon"></span>
+    	  <%= icon("gift", class: "report-icon") %>
     	  <span class="report-title">Gifts</span>
     	<% end %>
     	<span class="report-description">- report all Gifts over a time period</span> 
@@ -51,7 +51,7 @@
   <div class="row report-row">
     <div class="col-xs-8 col-xs-offset-2">
       <%= link_to(reports_path) do %> 
-        <span class="glyphicon glyphicon-flag report-icon"></span>
+        <%= icon("calendar-check-o", class: "report-icon") %>
         <span class="report-title">LYBUNT</span>
       <% end %>
       <span class="report-description">- report Donors who gave last year but unfortunately not this year</span>

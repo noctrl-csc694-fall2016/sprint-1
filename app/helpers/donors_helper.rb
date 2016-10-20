@@ -1,6 +1,6 @@
 module DonorsHelper
   
-  def gift_count(donor)
+  def gift_count_per_donor(donor)
     gifts = Gift.all
     count = 0
     gifts.each do |g|
@@ -9,7 +9,7 @@ module DonorsHelper
     return count
   end
   
-  def gift_total(donor)
+  def gift_total_amount_per_donor(donor)
     gifts = Gift.all
     @sum = 0
     gifts.each do |g|

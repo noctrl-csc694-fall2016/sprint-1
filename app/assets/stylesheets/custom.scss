@@ -1,6 +1,22 @@
+/* Bootstrap Inclusion*/
 @import "bootstrap-sprockets";
 @import "bootstrap";
+/* FontAwesome Inclusion*/
+@import "font-awesome-sprockets";
+@import "font-awesome";
+/* Custom Google Fonts */
 @import url('https://fonts.googleapis.com/css?family=Exo:600i|Open+Sans');
+
+/* Notes:
+  1. Use EM for font sizing
+  2. Provide browser hacks only when necessary
+  3. Group code by functional area with comment header
+*/
+
+/* Color Pallete Images
+- http://www.noupe.com/wp-content/uploads/2012/02/cpspringhassprung.jpg
+- http://www.noupe.com/wp-content/uploads/2012/02/cpspringbybenson.jpg
+*/
 
 /* Core CSS */
 body {
@@ -15,36 +31,44 @@ p{
 
 /* Header */
 .navbar-donna {
-	background-color: white;
+	background-color: rgb(255,255,255);
 	height: 120px;
-	border-bottom: 2px solid #85bb65;
+	border-bottom: 2px solid rgb(172, 168, 242);
 }
 .navbar-donna-search {
 	margin-top: 40px;
-}
-.navbar-donna-brand {
-	color: dimgray;
-	font-family: 'Exo', sans-serif;
 	a{
-		color: dimgray;
-		text-decoration: none;
+		color: rgb(140, 137, 240);
+	}
+	&:hover{
+		color: rgb(140, 137, 240);
 	}
 }
-a.glow, a.glow:hover, a.glow:focus
-{
-	text-decoration: none;
-	color: dimgray;
-	text-shadow: none;
-	-webkit-transition: 500ms linear 0s;
-	-moz-transition: 500ms linear 0s;
-	-o-transition: 500ms linear 0s;
-	transition: 500ms linear 0s;
-	outline: 0 none;
-}
-a.glow:hover, a.glow:focus
-{
-	color: #B23909;
-	text-shadow: -1px 1px 8px #ffc, 1px -1px 8px #1932FF;
+.navbar-donna-brand {
+	color: rgb(140, 137, 240);
+	font-family: 'Exo', sans-serif;
+	
+	a{
+		color: rgb(140, 137, 240);
+		text-decoration: none;
+	}
+	
+	a.glow, a.glow:hover, a.glow:focus
+	{
+		text-decoration: none;
+		color: rgb(140, 137, 240);
+		text-shadow: none;
+		-webkit-transition: 500ms linear 0s;
+		-moz-transition: 500ms linear 0s;
+		-o-transition: 500ms linear 0s;
+		transition: 500ms linear 0s;
+		outline: 0 none;
+	}
+	a.glow:hover, a.glow:focus
+	{
+		color: rgb(140, 137, 240);
+		text-shadow: -1px 1px 8px #ffc, 1px -1px 8px rgb(140, 137, 240);
+	}
 }
 .navbar-header .navbar-brand{
     float: right;
@@ -55,9 +79,10 @@ a.glow:hover, a.glow:focus
 	padding-top: 120px;
 	margin-bottom:60px;
 	a {
-		color: #B21212;
+		color: rgb(204, 107, 54);
+		text-decoration: none;
 		&:hover{
-			color: #FF0000;
+			color: rgb(97, 52, 13);
 		}
 	}
 }
@@ -65,13 +90,20 @@ a.glow:hover, a.glow:focus
 	h1, h2, h3, h4, h5, h6{
 		font-weight: bold;
 		font-style: italic;
+		color: rgb(50, 42, 63);
 	}
+	
+	/* Image Source: http://www.clipartbest.com/cliparts/biy/Knn/biyKnn4iL.png */
+	background-image:url('/assets/butterfly.gif');
+    background-repeat:no-repeat;
+    background-position:0% 20%;
+    background-attachment: fixed;
 }
 
 .row-donna-home-icons {
 	padding: 25px;
 	font-size: 1.75;
-	color: dimgray;
+	color: rgb(105,105,105);
 }
 .icon-donna {
 	font-size: 1.75em;
@@ -79,19 +111,19 @@ a.glow:hover, a.glow:focus
 }
 .icon-donna-text {
 	font-size: 1.75em;
-	color: dimgray;
+	color: rgb(105,105,105);
 }
 .icon-donna-new {
-	color: #85bb65;
+	color: rgba(127, 165, 66, 1.0);
 }
 .icon-donna-surf {
-	color: #9b65bb;
+	color: rgb(73, 64, 155);
 }
 .icon-donna-reports {
-	color: #6585bb;
+	color: rgb(172, 168, 242);
 }
 .icon-donna-importexport {
-	color: #bb9b65;
+	color: rgb(204, 107, 54);
 }
 .contactDiv {
 	text-align:center;
@@ -100,7 +132,7 @@ a.glow:hover, a.glow:focus
 /** Activities */
 .activity-icon {
 	font-size: 20px;
-	color: green;
+	color: rgb(0,128,0);
 }
 .activity-text {
 	font-size: 20px;
@@ -111,7 +143,7 @@ a.glow:hover, a.glow:focus
 	margin-top: 20px;
 }
 .report-text {
-	color: dimgray;
+	color: rgb(105,105,105);
 }
 .report-title {
 	font-size: 32px;
@@ -125,7 +157,7 @@ a.glow:hover, a.glow:focus
 .report-icon {
 	font-size: 28px;
 	padding-right: 12px;
-	color: dimgray;
+	color: rgb(105,105,105);
 }
 
 /* Import-export css - just use report css when possible */
@@ -133,23 +165,18 @@ a.glow:hover, a.glow:focus
 	margin-top: 40px;
 }
 .import-color {
-	color: #9b65bb;		/* import is purple */
+	color: rgb(73, 64, 155);		/* import is purple */
 }
 .import-icon {
 	font-size: 28px;
 	padding-right: 12px;
 }
 .export-color {
-	color: #bb9b65;		/* export is funky copper */
+	color: rgb(204, 107, 54);		/* export is funky copper */
 }
 .export-icon {
 	font-size: 28px;
 	padding-right: 12px;
-}
-
-/* Hyper surf css*/
-.hyper-row {
-	padding-top: 20px;
 }
 
 /* Login screen CSS */
@@ -174,23 +201,29 @@ a.glow:hover, a.glow:focus
 
 /* Forms */
 .required-field-marker {
-	color: #f00;
+	color: rgb(204, 107, 54);
 	font-weight: bold;
 }
-
 #error_explanation {
-  color: red;
+  color: rgb(255, 0, 0);
   ul {
-    color: red;
+    color: rgb(255, 0, 0);
     margin: 0 0 30px 0;
   }
 }
-
 .field_with_errors {
   @extend .has-error;
   .form-control {
     color: $state-danger-text;
   }
+}
+.btn.btn-success{
+	background-color: rgb(127, 165, 66);
+	color: rgb(255, 255, 255);
+}
+a.btn.btn-danger{
+	background-color: rgb(204, 107, 54);
+	color: rgb(255, 255, 255);
 }
 
 /* Reports */
@@ -201,6 +234,10 @@ a.glow:hover, a.glow:focus
 .report-description{
 	font-size: 1.5em;
 }
+.report-icon{
+	font-size: 1.5em;
+	font-weight: bold;
+}
 
 /* Footer CSS */
 .footer {
@@ -208,7 +245,8 @@ a.glow:hover, a.glow:focus
     width: 100%;
     height: 60px;
     position: fixed; /* Sticky Footer */
-	background-color: rgba(133, 187, 101, .90);
+	background-color: rgba(127, 165, 66, 0.90);
+	/* Handles custom border curvature */
 	-webkit-border-top-left-radius: 50px;
 	-webkit-border-top-right-radius: 50px;
     -moz-border-radius-topleft: 50px;
@@ -216,15 +254,23 @@ a.glow:hover, a.glow:focus
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
     font-size: 1.0em;
+    
+    .footer-text {
+		margin: 20px 0;		/* center footer text horizontally */
+	}
+	
+	a{
+		color: rgb(97, 52, 13);
+		text-decoration: none;
+	}
+	a:hover{
+		color: rgb(50, 42, 63);
+	}
 }
-.footer-text {
-	margin: 20px 0;		/* center footer text horizontally */
-}
-.footer a:link, .footer a:visited .footer a:active{
-	color: #0971B2;
-}
-.footer a:hover{
-	color: #1485CC;
+
+/* Tables */
+.table-striped > tbody > tr:nth-of-type(odd){
+	background-color: rgb(188, 205, 221);	
 }
 
 /* Misc */
@@ -239,6 +285,3 @@ a.glow:hover, a.glow:focus
 .line-break{
 	display: block;
 }
-
-
-

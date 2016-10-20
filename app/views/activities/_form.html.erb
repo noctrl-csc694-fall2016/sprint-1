@@ -10,13 +10,11 @@
     <div class="row form-group">
       <div class="col-xs-2 col-xs-offset-2">
         <%= f.label :start_date %>
-        <span class="required-field-marker">*</span>
-        <%= f.datetime_field :start_date, class: 'form-control input-sm' %>
+        <%= f.date_field :start_date, class: 'form-control input-sm' %>
       </div>
       <div class="col-xs-2">
         <%= f.label :end_date %>
-        <span class="required-field-marker">*</span>
-        <%= f.datetime_field :end_date, class: 'form-control input-sm' %>
+        <%= f.date_field :end_date, class: 'form-control input-sm' %>
       </div>
       <div class="col-xs-1">
         <%= f.label :goal %>

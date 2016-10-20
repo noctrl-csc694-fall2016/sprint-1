@@ -17,9 +17,14 @@
   </div>
 </div>
 
+<!--dropdown for activity and donor-->
+<div class="row">
+  <%= render 'search_form' %>
+</div>
+
+<!--Table -- list all requested gifts-->
 <div class="row">
   <div class="col-sm-8 col-xs-offset-2">
-    <% if @gifts.count != 0 %>
     <table class="table table-striped table-hover table-bordered table-responsive">
       <thead>
         <tr>
@@ -27,21 +32,23 @@
           <td>Donor</td>
           <td>Date</td>
           <td>Amount</td>
+          <td>Type</td>
         </tr>
       </thead>
       <tbody>
         <% @gifts.each do |gift| %>
-        <tr>
-          <td><%= link_to Activity.find(gift.activity).name, edit_gift_path(gift) %></td>
-          <td><%= Donor.find(gift.donor).first_name + " " + Donor.find(gift.donor).last_name %></td>
-          <td><%= gift.donation_date %></td>
-          <td><%= number_to_currency(gift.amount) %></td>
-        </tr>
+        <!--find the gifts that match the selected activity and donor-->
+          <% if ((params[:activity_id] == "" || params[:activity_id] == gift.activity_id.to_s ) && (params[:donor_id] == "" || params[:donor_id] == gift.donor_id.to_s)) %>
+          <tr>
+            <td><%= link_to Activity.find(gift.activity).name, edit_gift_path(gift) %></td>
+            <td><%= Donor.find(gift.donor).first_name + " " + Donor.find(gift.donor).last_name %></td>
+            <td><%= gift.donation_date %></td>
+            <td><%= number_to_currency(gift.amount) %></td>
+            <td><%= gift.gift_type %></td>
+          </tr>
+          <% end %>
         <% end %>
       </tbody>
     </table>
-    <% else %>
-    <h3>No gifts yet.</h3>
-    <% end %>
   </div>
 </div>
