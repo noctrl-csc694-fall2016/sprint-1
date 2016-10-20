@@ -17,15 +17,45 @@
     </div>
   </div>
 
+<!-- Begin CSV Import -->
 <div class="row report-row">
-  <div class="col-xs-8 col-xs-offset-2"> 
-  <%= link_to('import-export/import') do %>
+  <div class="col-xs-8 col-xs-offset-2" id="importLink"> 
+  <%= link_to('javascript:void(0)') do %>
   	<span class="	glyphicon glyphicon-download import-icon import-color"></span>
-  	<span class="report-title">RE Import</span> 
+  	<span class="report-title">CSV Import</span> 
   	<% end %>
   	<span class="report-description">- import data from Raiser's Edge</span> 
   </div>
 </div>
+
+<div id='importPopupWrapper' class='col-xs-8 col-xs-offset-2'>
+	  <p><p></p>
+	  	<span>Please select the import type.</span>
+	    <select id="importTypeSelection" name="user_id">
+	      <option value="None" selected="selected">Choose Type</option>
+	      <option value="Donors">Donors</option></option>
+	      <option value="Gifts">Gifts</option>
+	    </select>
+	  </p>
+	<div id='donorsImportDiv'>
+		<p>
+			<%= form_tag import_donors_path, multipart: true do %>
+	      <%= file_field_tag :file %>
+	      <br />
+	      <%= submit_tag "Import Donors from CSV" %>
+    	<% end %>
+		</p>
+  </div>
+  <div id='giftsImportDiv'>
+  	<p>
+  		<%= form_tag import_gifts_path, multipart: true do %>
+	      <%= file_field_tag :file %>
+	      <br />
+	      <%= submit_tag "Import Gifts from CSV" %>
+    	<% end %>
+  	</p>
+  </div>
+</div> <!-- End CSV Import -->
 
 <!-- Export header -->
 <div class="row export-header">
@@ -59,6 +89,21 @@
 
 <script>
 	$(document).ready(function() {
+		$("#importPopupWrapper").css('display', 'none');
+		$("#importLink").click(function () {
+			$("#importPopupWrapper").css('display', 'block');
+			importFunctions.hideImports();
+		});
+		
+		$('#importTypeSelection').on('change', function() {
+      importFunctions.hideImports();
+      if (this.value == 'Donors') {
+        $('#donorsImportDiv').css('display', 'block');
+      }
+      else if (this.value == 'Gifts') {
+        $('#giftsImportDiv').css('display', 'block');
+      }
+    });
 		
 	});
 </script>

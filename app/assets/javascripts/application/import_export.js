@@ -7,7 +7,7 @@ var importFunctions = {
   }, 
   
   hideImports: function () {
-    document.getElementById('activitiesImportDiv').style.display = 'none';
+    //document.getElementById('activitiesImportDiv').style.display = 'none';
     document.getElementById('donorsImportDiv').style.display = 'none';
     document.getElementById('giftsImportDiv').style.display = 'none';
   }
