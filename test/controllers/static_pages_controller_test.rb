@@ -1,19 +1,48 @@
 require 'test_helper'
 
 class StaticPagesControllerTest < ActionDispatch::IntegrationTest
+  test 'should get_root_path' do
+    get root_path
+    assert_response :success
+    assert_select "title", "Home | Gift Garden"
+  end
+  
   test "should get home" do
-    get static_pages_home_url
+    get home_path
     assert_response :success
+    assert_select "title", "Home | Gift Garden"
   end
 
-  test "should get about" do
-    get static_pages_about_url
+  test "should get_help_path" do
+    get help_path
     assert_response :success
+    assert_select "title", "Help | Gift Garden"
+  end
+  
+  test "should get_about_path" do
+    get about_path
+    assert_response :success
+    assert_select "title", "About | Gift Garden"
+  end
+  
+  test "should get_contact_path" do
+    get contact_path
+    assert_response :success
+    assert_select "title", "Contact | Gift Garden"
+  end
+  
+  test "should get_reports_path" do
+    get reports_path
+    assert_response :success
+    assert_select "title", "Reports | Gift Garden"
+  end
+  
+  test "should get_Import-Export_path" do
+    get import_export_path
+    assert_response :success
+    assert_select "title", "Import-Export Information | Gift Garden"
   end
 
-  test "should get help" do
-    get static_pages_help_url
-    assert_response :success
-  end
+  
 
 end
