@@ -13,6 +13,8 @@
             </div>
             <%= select_tag(:donor_id, options_for_select(@donors, params[:donor_id] || ""), include_blank: "Select a donor", class: 'form-control input-sm') %>
         </div>
-        <%= submit_tag 'GO', class: 'btn btn-success' %>
+        <div class="col-xs-2 vertical-align-bottom">
+            <%= submit_tag 'GO', class: 'btn btn-success' %>
+        </div>
     </div>
 <% end %>

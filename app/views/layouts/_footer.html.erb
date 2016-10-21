@@ -39,5 +39,13 @@
       $(".navbar-donna-search").css("margin-top", "40px");
     }
   });
+  /* Bottom Align Specific Tags 
+  (http://stackoverflow.com/questions/13841387/how-do-i-bottom-align-grid-elements-in-bootstrap-fluid-layout)
+  */
+  //for each element that is classed as 'pull-down', set its margin-top to the difference between its own height and the height of its parent
+  $('.vertical-align-bottom').each(function() {
+    var $this = $(this);
+    $this.css('margin-top', $this.parent().height() - $this.height())
+  });
 });
 </script>
