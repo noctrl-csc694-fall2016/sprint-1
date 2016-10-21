@@ -1,4 +1,5 @@
 <% provide(:title, "Import-Export Information") %>
+<div class="overlay" id="overlay" style="display:none;"></div>
 <div class="row">
   <div class="col-sm-10 col-xs-offset-2">
   	<div class="page-header">
@@ -6,9 +7,10 @@
   	</div>
   </div>
 </div>
+
 <!-- Import content -->
   <div class="row report-row">
-    <div class="col-xs-8 col-xs-offset-2"> 
+    <div class="col-xs-8 col-xs-offset-2" id='inKindLink'> 
     <%= link_to('import-export/inkind') do %>
     	<span class="	glyphicon glyphicon-leaf import-icon import-color"></span>
     	<span class="report-title">In-kind</span> 
@@ -17,7 +19,7 @@
     </div>
   </div>
 
-<!-- Begin CSV Import -->
+<!-- Beginning of CSV Imports -->
 <div class="row report-row">
   <div class="col-xs-8 col-xs-offset-2" id="importLink"> 
   <%= link_to('javascript:void(0)') do %>
@@ -28,16 +30,37 @@
   </div>
 </div>
 
-<div id='importPopupWrapper' class='col-xs-8 col-xs-offset-2'>
-	  <p><p></p>
-	  	<span>Please select the import type.</span>
-	    <select id="importTypeSelection" name="user_id">
-	      <option value="None" selected="selected">Choose Type</option>
-	      <option value="Donors">Donors</option></option>
-	      <option value="Gifts">Gifts</option>
-	    </select>
-	  </p>
-	<div id='donorsImportDiv'>
+<div id='inKindPopupWrapper' class='import-export-dialog import-export-text'>
+	<a class="boxclose" id="boxclose"></a>
+	<br />
+	<div id='inKindImportDiv' class='import-html'>
+  	<p>
+  		<div>Imports will be created in the <br />
+  		form of a .csv file, or whatever type<br />
+		  of file that Raiser's Edge or Donor <br />
+		  Snap can output.</div>
+		  <br />
+		  <button type="button" onclick="alert('import in kind data')">Import In Kind Data</button>
+		  <br />
+  	</p>
+  </div>		
+</div>
+
+															<!-- col-xs-8 col-xs-offset-2 -->
+<div id='importPopupWrapper' class='import-export-dialog import-export-text'>
+	
+	<a class="boxclose" id="boxclose"></a>
+	<br />
+  <p>
+  	<span>Please select the import type.</span>
+    <select id="importTypeSelection" name="user_id">
+      <option value="None" selected="selected">Choose Type</option>
+      <option value="Donors">Donors</option></option>
+      <option value="Gifts">Gifts</option>
+    </select>
+  </p>
+	
+	<div id='donorsImportDiv' class='import-html'>
 		<p>
 			<%= form_tag import_donors_path, multipart: true do %>
 	      <%= file_field_tag :file %>
@@ -46,7 +69,8 @@
     	<% end %>
 		</p>
   </div>
-  <div id='giftsImportDiv'>
+  
+  <div id='giftsImportDiv' class='import-html'>
   	<p>
   		<%= form_tag import_gifts_path, multipart: true do %>
 	      <%= file_field_tag :file %>
@@ -55,14 +79,15 @@
     	<% end %>
   	</p>
   </div>
-</div> <!-- End CSV Import -->
+</div> 
+
+</div>	<!-- End of CSV Imports -->
 
 <!-- Export header -->
 <div class="row export-header">
   <div class="col-sm-10 col-xs-offset-2">
   	<div class="page-header">
   		<h2 class="export-color">Export <small>&nbsp; write data out of the program</small></h2>
-  		
   	</div>
   </div>
 </div>   <!-- row -->
@@ -77,6 +102,7 @@
 	<span class="report-description">- export contact info to MailChimp</span> 
 	</div>
 </div>
+
 <div class="row report-row">
 	<div class="col-xs-8 col-xs-offset-2"> 
 	<%= link_to('import-export/export.csv') do %>
@@ -89,19 +115,57 @@
 
 <script>
 	$(document).ready(function() {
+		$("#inKindPopupWrapper").css('display', 'none');
 		$("#importPopupWrapper").css('display', 'none');
-		$("#importLink").click(function () {
-			$("#importPopupWrapper").css('display', 'block');
-			importFunctions.hideImports();
+		
+		$("#inKindLink").click(function () {
+			$('#overlay').fadeIn(200,function(){
+           $('#inKindPopupWrapper').animate({
+						opacity: "toggle",
+						height: "toggle"
+					}); 
+        });
+			return false;
 		});
 		
+		$("#importLink").click(function () {
+			$('#overlay').fadeIn(200,function(){
+           $('#importPopupWrapper').animate({
+						opacity: "toggle",
+						height: "toggle"
+					}); 
+        });
+			importFunctions.hideImports();
+			return false;
+		});
+		
+		$('.boxclose').click(function(){
+			
+			if ($('#inKindPopupWrapper').css('display') == 'block') {
+				$('#inKindPopupWrapper').animate({
+					opacity: "toggle",
+					height: "toggle"
+				});
+			}
+			
+    	if ($('#importPopupWrapper').css('display') == 'block') {
+				$('#importPopupWrapper').animate({
+					opacity: "toggle",
+					height: "toggle"
+				});
+			}
+			
+    	$('#overlay').fadeOut('fast');
+    });
+		
 		$('#importTypeSelection').on('change', function() {
-      importFunctions.hideImports();
       if (this.value == 'Donors') {
-        $('#donorsImportDiv').css('display', 'block');
+        importFunctions.hideImports();
+        $('#donorsImportDiv').toggle();
       }
       else if (this.value == 'Gifts') {
-        $('#giftsImportDiv').css('display', 'block');
+        importFunctions.hideImports();
+        $('#giftsImportDiv').toggle();
       }
     });
 		
