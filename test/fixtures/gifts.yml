@@ -4,12 +4,12 @@ one:
   donor: one
   activity: one
   amount: 1.5
-  type: 
+  gift_type: 'cash'
   notes: MyText
 
 two:
   donor: two
   activity: two
   amount: 1.5
-  type: 
+  gift_type: 'cash'
   notes: MyText
