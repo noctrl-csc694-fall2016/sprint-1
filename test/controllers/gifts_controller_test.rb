@@ -1,13 +1,20 @@
 require 'test_helper'
 
 class GiftsControllerTest < ActionDispatch::IntegrationTest
-  test "should get new" do
-    get gifts_new_url
+  test "should get all_gifts" do
+    get gifts_path
     assert_response :success
+    assert_select "title", "Surf Gifts | Gift Garden"
+  end
+  
+  test "should get new_gift" do
+    get new_gift_path
+    assert_response :success
+    assert_select "title", "New Gift | Gift Garden"
   end
 
   test "should get edit" do
-    get gifts_edit_url
+    get donors_edit_url
     assert_response :success
   end
 
