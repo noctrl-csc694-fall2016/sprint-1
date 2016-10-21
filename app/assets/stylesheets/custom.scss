@@ -67,11 +67,14 @@ p{
 	a.glow:hover, a.glow:focus
 	{
 		color: rgb(140, 137, 240);
-		text-shadow: -1px 1px 8px #ffc, 1px -1px 8px rgb(140, 137, 240);
+		text-shadow: -1px 1px 8px rgb(255,255,204), 1px -1px 8px rgb(140, 137, 240);
 	}
 }
 .navbar-header .navbar-brand{
     float: right;
+}
+.page-header{
+	border-bottom: 1px solid rgb(188, 205, 221);
 }
 
 /* Page Content */
@@ -84,6 +87,15 @@ p{
 		&:hover{
 			color: rgb(97, 52, 13);
 		}
+	}
+	table{
+		a {
+		color: rgb(97, 52, 13);
+		text-decoration: none;
+		&:hover{
+			color: rgb(204, 107, 54);
+		}
+	}
 	}
 }
 .page-content{
@@ -111,7 +123,7 @@ p{
 }
 .icon-donna-text {
 	font-size: 1.75em;
-	color: rgb(105,105,105);
+	color: rgb(97, 52, 13);
 }
 .icon-donna-new {
 	color: rgba(127, 165, 66, 1.0);
@@ -187,7 +199,7 @@ p{
 	margin-top: 40px;
 }
 .navbar-donna-login-title {
-	color: dimgray;
+	color: rgb(105,105,105);
 }
 .row-login {
 	padding-top: 100px;
@@ -195,7 +207,7 @@ p{
 
 /* Page Action Buttons */
 .primary-action-link {
-	color: #85bb65;
+	color: rgb(133,187,101);
 	font-size: 1.5em;
 }
 
@@ -276,11 +288,6 @@ a.btn.btn-danger{
 /* Misc */
 .top-margin-sm{
 	margin-top: 10px;
-}
-.bottom-vertical-alignment{
-	display: inline-block;
-    vertical-align: bottom;
-    float: none;
 }
 .line-break{
 	display: block;
