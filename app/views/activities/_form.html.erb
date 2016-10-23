@@ -1,7 +1,7 @@
 <%= form_for(@activity) do |f| %>
     <div class="row form-group">
       <%= render 'shared/activity_error_messages' %>
-      <div class="col-xs-5 col-xs-offset-2">
+      <div class="col-xs-6 col-xs-offset-2">
         <%= f.label :name %>
         <span class="required-field-marker">*</span>
         <%= f.text_field :name, class: 'form-control input-sm' %> 
@@ -10,21 +10,24 @@
     <div class="row form-group">
       <div class="col-xs-2 col-xs-offset-2">
         <%= f.label :start_date %>
-        <%= f.date_field :start_date, class: 'form-control input-sm' %>
+        <%= f.date_field :start_date, class: 'form-control' %>
       </div>
       <div class="col-xs-2">
         <%= f.label :end_date %>
-        <%= f.date_field :end_date, class: 'form-control input-sm' %>
+        <%= f.date_field :end_date, class: 'form-control' %>
       </div>
-      <div class="col-xs-1">
+      <div class="col-xs-2">
         <%= f.label :goal %>
         <span class="required-field-marker">*</span>
-        <%= f.number_field :goal, class: 'form-control input-sm' %> 
+        <div class="input-group">
+          <div class="input-group-addon">$</div>
+          <%= f.number_field :goal, class: 'form-control input-sm' %> 
+        </div>
       </div>
     </div>
     
     <div class="row form-group">
-      <div class="col-xs-5 col-xs-offset-2">
+      <div class="col-xs-6 col-xs-offset-2">
         <%= f.label :description %>
         <span class="required-field-marker">*</span>
         <%= f.text_field :description, class: 'form-control input-sm' %> 

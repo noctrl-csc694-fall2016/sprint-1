@@ -86,6 +86,7 @@ p{
 		text-decoration: none;
 		&:hover{
 			color: rgb(97, 52, 13);
+			text-decoration: none;
 		}
 	}
 	table{
@@ -236,6 +237,9 @@ p{
 a.btn.btn-danger{
 	background-color: rgb(204, 107, 54);
 	color: rgb(255, 255, 255);
+}
+.select-medium{
+	width: 100px;
 }
 
 /* Reports */
