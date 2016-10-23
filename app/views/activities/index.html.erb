@@ -10,7 +10,7 @@
   		  <div>
       		Surf to: 
       		  <%=link_to "All Donors", donors_url %>
-          	<%=link_to "All Gifts", gifts_url %>
+          	<%=link_to "All Gifts", gifts_url + "?activity_id=&donor_id=&commit=GO" %>
         </div>
   		</aside>
   	</div>
@@ -38,8 +38,8 @@
           <td><%= activity.end_date %></td>
           <td><%= number_to_currency(activity.goal) %></td>
           <td><%= progress(activity) %>%</td>
-          <td></td>
-          <td><%= gift_count_per_activity(activity) %></td>
+          <td><%= link_to donor_count_per_activity(activity), "/gifts?activity_id=" + activity.id.to_s + "&donor_id=&commit=GO" %></td>
+          <td><%= link_to gift_count_per_activity(activity), "/gifts?activity_id=" + activity.id.to_s + "&donor_id=&commit=GO" %></td>
         </tr>
         <% end %>
       </tbody>

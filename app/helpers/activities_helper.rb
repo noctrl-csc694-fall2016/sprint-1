@@ -20,5 +20,7 @@ module ActivitiesHelper
   end 
   
   def donor_count_per_activity(activity)
+    gifts = Gift.where(:activity_id => activity)
+    gifts.distinct.count(:donor_id)
   end 
 end
