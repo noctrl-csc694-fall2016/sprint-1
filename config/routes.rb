@@ -17,10 +17,6 @@ Rails.application.routes.draw do
   get    '/reports', to: 'static_pages#reports'
   get    '/import-export', to: 'static_pages#import_export'
   
-  get 'import-export/import'
-  get 'import-export/inkind'
-  get 'import-export/export'
-  
   get    'hyper-surf/donors', to: 'hyper_surf#donors'
   get    'hyper-surf/all', to: 'hyper_surf#all'
   

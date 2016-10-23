@@ -22,5 +22,6 @@ class StaticPagesController < ApplicationController
   end
   
   def import_export
+    @activities = Activity.all
   end
 end

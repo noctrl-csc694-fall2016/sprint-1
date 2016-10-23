@@ -5,17 +5,22 @@ class Gift < ApplicationRecord
   validates :donation_date, presence: true
   validates :amount, presence: true, :numericality => {:greater_than_or_equal_to => 0}
   
-  def self.import(file)
-    #CSV.foreach(file.path, headers: true) do |row|
+  # Export Gifts
+  # outputs all gifts as a csv file(all attributes included).
+  def self.import(file, activity)
+    
+    CSV.foreach(file.path, headers: true) do |row|
+      gift_hash = row.to_hash 
+      # imported gifts are assigned an activity at import time
+      gift_hash["activity_id"] = activity
+      
+      gift = Gift.where(id: gift_hash["id"])
 
-    #  gift_hash = row.to_hash 
-    #  gift = Gift.where(id: gift_hash["id"])
-
-    #  if gift.count == 1
-    #    gift.first.update_attributes(gift_hash)
-    #  else
-    #    Gift.create!(gift_hash)
-    #  end # end if !product.nil?
-    #end # end CSV.foreach
-  end # end self.import(file)
+      if gift.count == 1
+        gift.first.update_attributes(gift_hash)
+      else
+        Gift.create!(gift_hash)
+      end # end if else
+    end # end foreach
+  end
 end
