@@ -17,7 +17,7 @@
         <%=f.label :activity %>
           <span class="required-field-marker">*</span>
       </div>
-      <%=f.select :activity_id, @activities, prompt: "Select an activity", class: 'form-control input-sm dropdown-menu' %>
+      <%=f.select :activity_id, @activities, prompt: "Select an activity", class:'form-control input-sm dropdown-menu' %>
     </div>
   </div>
   <!-- row -->
@@ -35,7 +35,10 @@
     <div class="col-xs-4 col-xs-offset-2">
       <%=f.label :amount %>
         <span class="required-field-marker">*</span>
-        <%=f.number_field :amount, class: 'form-control input-sm' %>
+        <div class="input-group">
+        <div class="input-group-addon">$</div>
+          <%=f.number_field :amount, class: 'form-control input-sm' %>
+        </div>
     </div>
   </div>
   <!-- row -->
