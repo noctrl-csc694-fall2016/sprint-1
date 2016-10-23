@@ -28,6 +28,9 @@ body {
 p{
 	font-size: 1.15em;
 }
+a:hover{
+	text-decoration: none;
+}
 
 /* Header */
 .navbar-donna {
@@ -50,7 +53,6 @@ p{
 	
 	a{
 		color: rgb(140, 137, 240);
-		text-decoration: none;
 	}
 	
 	a.glow, a.glow:hover, a.glow:focus
@@ -83,16 +85,13 @@ p{
 	margin-bottom:60px;
 	a {
 		color: rgb(204, 107, 54);
-		text-decoration: none;
 		&:hover{
 			color: rgb(97, 52, 13);
-			text-decoration: none;
 		}
 	}
 	table{
 		a {
 		color: rgb(97, 52, 13);
-		text-decoration: none;
 		&:hover{
 			color: rgb(204, 107, 54);
 		}
@@ -277,7 +276,6 @@ a.btn.btn-danger{
 	
 	a{
 		color: rgb(97, 52, 13);
-		text-decoration: none;
 	}
 	a:hover{
 		color: rgb(50, 42, 63);
