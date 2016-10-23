@@ -2,7 +2,7 @@
 <div class="overlay" id="overlay" style="display:none;"></div>
 <div class="row">
   <div class="col-sm-10 col-xs-offset-2">
-  	<div class="page-header">
+  	<div class='import-header'>
   		<h2 class="import-color">Import <small>&nbsp; read data into Donna Donor from an outside source</small></h2>
   	</div>
   </div>
@@ -20,7 +20,7 @@
   </div>
 
 <!-- Beginning of CSV Imports -->
-<div class="row report-row">
+<div class="row  report-row">
   <div class="col-xs-8 col-xs-offset-2" id="importLink"> 
   <%= link_to('javascript:void(0)') do %>
   	<span class="	glyphicon glyphicon-download import-icon import-color"></span>
@@ -35,10 +35,7 @@
 	<br />
 	<div id='inKindImportDiv' class='import-html'>
   	<p>
-  		<div>Imports will be created in the <br />
-  		form of a .csv file, or whatever type<br />
-		  of file that Raiser's Edge or Donor <br />
-		  Snap can output.</div>
+  		<div>Imports will be created from the chosen .csv file.<br /></div>
 		  <br />
 		  <button type="button" onclick="alert('import in kind data')">Import In Kind Data</button>
 		  <br />
@@ -48,31 +45,34 @@
 
 															<!-- col-xs-8 col-xs-offset-2 -->
 <div id='importPopupWrapper' class='import-export-dialog import-export-text'>
-	
 	<a class="boxclose" id="boxclose"></a>
-	<br />
-  <p>
-  	<span>Please select the import type.</span>
+	<br/>
+	<div class='import-export-label'>
+		<span>Please select the import type:</span>
     <select id="importTypeSelection" name="user_id">
       <option value="None" selected="selected">Choose Type</option>
       <option value="Donors">Donors</option></option>
       <option value="Gifts">Gifts</option>
     </select>
-  </p>
-	
-	<div id='donorsImportDiv' class='import-html'>
-		<p>
-			<%= form_tag import_donors_path, multipart: true do %>
-	      <%= file_field_tag :file %>
-	      <br />
-	      <%= submit_tag "Import Donors from CSV" %>
-    	<% end %>
-		</p>
+	</div>
+  	
+	<div id='donorsImportDiv' class='import-html import-export-label'>
+		<br />
+		<%= form_tag import_donors_path, multipart: true do %>
+      <%= file_field_tag :file %>
+      <br />
+      <%= submit_tag "Import Donors from CSV" %>
+  	<% end %>
   </div>
   
-  <div id='giftsImportDiv' class='import-html'>
+  <div id='giftsImportDiv' class='import-html import-export-label'>
   	<p>
-  		<%= form_tag import_gifts_path, multipart: true do %>
+  		<%= form_tag import_gifts_path, multipart:true do %>
+  			<span>Choose associated activity:</span>
+  			<%= select_tag "activity",
+  			options_from_collection_for_select(@activities, "id", "name") %>
+  			
+  			<br /><br />
 	      <%= file_field_tag :file %>
 	      <br />
 	      <%= submit_tag "Import Gifts from CSV" %>
@@ -86,7 +86,7 @@
 <!-- Export header -->
 <div class="row export-header">
   <div class="col-sm-10 col-xs-offset-2">
-  	<div class="page-header">
+  	<div class='import-header'>
   		<h2 class="export-color">Export <small>&nbsp; write data out of the program</small></h2>
   	</div>
   </div>
@@ -140,8 +140,39 @@
 		});
 		
 		$('.boxclose').click(function(){
+			hideImportDialogAndOverlay();
+    });
 			
-			if ($('#inKindPopupWrapper').css('display') == 'block') {
+    $(document).keyup(function(e) {
+     	if (e.keyCode == 27) {	// esc pressed
+        if ($(".import-export-dialog").length ||
+        		$(".boxclose").length ||
+        		$(".overlay").length) {
+        		hideImportDialogAndOverlay();		
+    		}
+    	}
+		});
+		
+		$('#importTypeSelection').on('change', function() {
+      if (this.value == 'Donors') {
+        importFunctions.hideImports();
+        $('#donorsImportDiv').toggle();
+      }
+      else if (this.value == 'Gifts') {
+        importFunctions.hideImports();
+        $('#giftsImportDiv').toggle();
+      }
+    });
+    
+    if($("div.alert.alert-info").length) {
+			  setTimeout(function(){ 
+			  	$("div.alert.alert-info").fadeOut("slow") }, 2000);
+			} 
+    
+	});
+	
+	function hideImportDialogAndOverlay () {
+		if ($('#inKindPopupWrapper').css('display') == 'block') {
 				$('#inKindPopupWrapper').animate({
 					opacity: "toggle",
 					height: "toggle"
@@ -156,18 +187,6 @@
 			}
 			
     	$('#overlay').fadeOut('fast');
-    });
-		
-		$('#importTypeSelection').on('change', function() {
-      if (this.value == 'Donors') {
-        importFunctions.hideImports();
-        $('#donorsImportDiv').toggle();
-      }
-      else if (this.value == 'Gifts') {
-        importFunctions.hideImports();
-        $('#giftsImportDiv').toggle();
-      }
-    });
-		
-	});
+	}
+	
 </script>

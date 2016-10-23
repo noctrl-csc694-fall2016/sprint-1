@@ -22,9 +22,10 @@ class GiftsController < ApplicationController
     @activities = Activity.all.map { |activity| [ activity.name, activity.id ] }
   end
   
+  # Import Gifts: calls import method from the Gift model
   def import
-    Gift.import(params[:file])
-    redirect_to root_url, notice: "Gifts imported."
+    Gift.import(params[:file], params[:activity])
+    redirect_to import_export_url, notice: "Gifts imported."
   end
 
   

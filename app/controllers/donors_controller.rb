@@ -39,10 +39,10 @@ class DonorsController < ApplicationController
     end
   end
   
-    
+  # Import Donors: calls import method from the Donor model
   def import
     Donor.import(params[:file])
-    redirect_to root_url, notice: "Donors imported."
+    redirect_to import_export_url, notice: "Donors imported."
   end
   
   # list all donors on index page

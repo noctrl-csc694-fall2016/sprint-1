@@ -12,7 +12,9 @@ class Donor < ApplicationRecord
                     uniqueness: true
   require 'csv'
   
-  def self.as_csv 
+  # Export Donors
+  # outputs all donors as a csv file(all attributes included).
+  def self.as_csv
     CSV.generate do |csv|
     csv << column_names
     all.each do |item|
@@ -21,18 +23,19 @@ class Donor < ApplicationRecord
     end
   end
   
+  # Import Donors
+  # Takes csv file and by row seeks to update or add in donor(s).
   def self.import(file)
-    #CSV.foreach(file.path, headers: true) do |row|
+    CSV.foreach(file.path, headers: true) do |row|
+      donor_hash = row.to_hash # exclude the price field
+      donor = Donor.where(id: donor_hash["id"])
 
-    #  donor_hash = row.to_hash # exclude the price field
-    #  donor = Donor.where(id: donor_hash["id"])
-
-    #  if donor.count == 1
-    #    donor.first.update_attributes(donor_hash)
-    #  else
-    #    Donor.create!(donor_hash)
-    #  end # end if !donor.nil?
-    #end # end CSV.foreach
-  end # end self.import(file)
+      if donor.count == 1
+        donor.first.update_attributes(donor_hash)
+      else
+        Donor.create!(donor_hash)
+      end # end if else
+    end # end foreach
+  end
   
 end
