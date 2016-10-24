@@ -62,6 +62,14 @@ class GiftsController < ApplicationController
     @gifts = Gift.all
     @donors = Donor.all.map { |donor| [ "#{donor.first_name} #{donor.last_name}", donor.id ] }
     @activities = Activity.all.map { |activity| [ activity.name, activity.id ] }
+    # for reports
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = GiftPdf.new(@gifts)
+        send_data pdf.render, filename: 'Gifts.pdf', type: 'application/pdf'
+      end
+    end
   end
   
   #delete gift

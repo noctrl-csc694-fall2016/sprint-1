@@ -51,8 +51,8 @@ class DonorsController < ApplicationController
     respond_to do |format|
       format.html
         format.pdf do
-          pdf = ReportPdf.new(@donors)
-          send_data pdf.render, filename: 'report.pdf', type: 'application/pdf'
+          pdf = DonorPdf.new(@donors)
+          send_data pdf.render, filename: 'Donors.pdf', type: 'application/pdf'
         end
       end
   end
