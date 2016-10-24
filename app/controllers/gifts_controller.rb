@@ -10,16 +10,14 @@ class GiftsController < ApplicationController
   # boxes on New Gift screen
   def new
     @gift = Gift.new
-    @donors = Donor.all.map { |donor| [ "#{donor.first_name} #{donor.last_name}", donor.id ] }
-    @activities = Activity.all.map { |activity| [ activity.name, activity.id ] }
+    map_activities_n_donors()
   end
 
   # populates edit/update gift screens with db info, also define maps to list 
   # donors/ids and activities/ids for select boxes on Edit Gift screen
   def edit
     @gift = Gift.find(params[:id])
-    @donors = Donor.all.map { |donor| [ "#{donor.first_name} #{donor.last_name}", donor.id ] }
-    @activities = Activity.all.map { |activity| [ activity.name, activity.id ] }
+    map_activities_n_donors()
   end
   
   # Import Gifts: calls import method from the Gift model
@@ -34,8 +32,7 @@ class GiftsController < ApplicationController
   # [map] code defines donors/ids and activities/ids for select boxes on New Gift screen
   def create
     @gift = Gift.new(gift_params)
-    @donors = Donor.all.map { |donor| [ "#{donor.first_name} #{donor.last_name}", donor.id ] }
-    @activities = Activity.all.map { |activity| [ activity.name, activity.id ] }
+    map_activities_n_donors()
     if @gift.save
       flash[:success] = "Gift added successfully!"
       redirect_to gifts_url
@@ -60,8 +57,7 @@ class GiftsController < ApplicationController
   #list all gifts on index page
   def index
     @gifts = Gift.all
-    @donors = Donor.all.map { |donor| [ "#{donor.first_name} #{donor.last_name}", donor.id ] }
-    @activities = Activity.all.map { |activity| [ activity.name, activity.id ] }
+    map_activities_n_donors()
     # for reports
     respond_to do |format|
       format.html
@@ -77,6 +73,11 @@ class GiftsController < ApplicationController
     Gift.find(params[:id]).destroy
     flash[:success] = "Gift deleted."
     redirect_to gifts_path
+  end
+  
+  def map_activities_n_donors()
+    @donors = Donor.all.map { |donor| [ "#{donor.first_name} #{donor.last_name}", donor.id ] }
+    @activities = Activity.all.map { |activity| [ activity.name, activity.id ] }
   end
   
   private
