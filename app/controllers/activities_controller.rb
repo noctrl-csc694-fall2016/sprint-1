@@ -42,6 +42,13 @@ class ActivitiesController < ApplicationController
   #list all activities on index page
   def index
     @activities = Activity.all
+    respond_to do |format|
+      format.html
+        format.pdf do
+          pdf = ActivityPdf.new(@activities)
+          send_data pdf.render, filename: 'Activities.pdf', type: 'application/pdf'
+        end
+      end
   end
   
   #delete activity
