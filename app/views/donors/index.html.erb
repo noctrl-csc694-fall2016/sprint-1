@@ -36,7 +36,7 @@
           <td><%= link_to "#{donor.first_name} #{donor.last_name}", edit_donor_path(donor) %></td>
           <td><%= link_to gift_count_per_donor(donor), "/gifts?donor_id=" + donor.id.to_s + "&activity_id=&commit=GO" %></td>
           <td>$<%= gift_total_amount_per_donor(donor) %></td>
-          <td>$<%= last_gift(donor) %></td>
+          <td>$<%= last_gift_amount(donor) %></td>
           <td><%= last_activity(donor) %></td>
         </tr>
         <% end %>
