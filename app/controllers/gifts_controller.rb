@@ -46,6 +46,7 @@ class GiftsController < ApplicationController
   # [map] code defines donors/ids and activities/ids for select boxes on Edit Gift screen
   def update
     @gift = Gift.find(params[:id])
+    map_activities_n_donors()
     if @gift.update(gift_params)
        redirect_to gifts_url
        flash[:success] = "Gift updated successfully!"

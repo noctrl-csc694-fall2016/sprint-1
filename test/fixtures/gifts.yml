@@ -1,15 +1,8 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  donor: one
-  activity: one
-  amount: 1.5
+  donor: andy
+  activity: golf
+  amount: 1500.00
   gift_type: 'cash'
-  notes: MyText
-
-two:
-  donor: two
-  activity: two
-  amount: 1.5
-  gift_type: 'cash'
-  notes: MyText
+  notes: Sample Donation

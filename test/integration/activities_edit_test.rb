@@ -9,8 +9,8 @@ class ActivitiesEditTest < ActionDispatch::IntegrationTest
     get edit_activity_path(@activity)
     assert_template 'activities/edit'
     name = "Food Truck"
-    start_date = "2016-07-16 01:00:00 UTC"
-    end_date = "2016-07-16 03:00:00 UTC"
+    start_date = "2016-07-16"
+    end_date = "2016-07-16"
     description = "new description"
     goal = 1000
     notes = "new notes"
