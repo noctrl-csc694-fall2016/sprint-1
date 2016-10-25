@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
   
+  #----------------------------------#
+  # Gift Garden Routes File
+  # original written by: Andy W, Oct 14 2016
+  # major contributions by:
+  #             Wei H, Oct 16 2016
+  #----------------------------------#
+  
   resources :gifts, only: [:new, :create, :edit, :update, :index, :destroy] do
     collection { post :import }
   end
