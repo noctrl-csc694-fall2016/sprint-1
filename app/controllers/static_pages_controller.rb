@@ -19,6 +19,7 @@ class StaticPagesController < ApplicationController
   end
   
   def reports
+    @activities = Activity.all
   end
   
   def import_export
