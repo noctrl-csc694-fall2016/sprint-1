@@ -13,6 +13,7 @@ class Gift < ApplicationRecord
   validates :donation_date, presence: true
   validates :amount, presence: true, :numericality => {:greater_than_or_equal_to => 0}
   validates :gift_type, presence: true
+  validates :notes, presence: false, length: { maximum: 2500 }
   
   # Export Gifts
   # outputs all gifts as a csv file(all attributes included).
