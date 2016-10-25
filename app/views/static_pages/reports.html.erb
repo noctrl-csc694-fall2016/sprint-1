@@ -60,65 +60,64 @@
   </div>
   
   <!-- Dialog Content -->
-  <div id='importPopupWrapper' class='import-export-dialog import-export-text'>
-    <a class="boxclose" id="boxclose"></a>
-  
-    <div class='import-export-label' id="activity-report-dialog">
-    <p>
-  		<%= form_tag 'activities.pdf' do %>
-  			<span>Choose Activity:</span>
-  			<br /><br />
-  			<%= select_tag "activity",
-  			options_from_collection_for_select(@activities, "id", "name") %>
-	      <br /><br />
-	      <%= submit_tag "Generate Report" %>
-    	<% end %>
-  	</p>
-    </div>  
-  </div>
-  
+<div id='importPopupWrapper' class='import-export-dialog import-export-text'>
+   <a class="boxclose" id="boxclose"></a>
+   <div class='import-export-label' id="activity-report-dialog">
+      <p>
+         <%= form_tag 'activities.pdf' do %>
+         <span>Choose Activity:</span>
+         <br /><br />
+         <%= select_tag "activity",
+            options_from_collection_for_select(@activities, "id", "name") %>
+         <br /><br />
+         <%= submit_tag "Generate Report" %>
+         <% end %>
+      </p>
+   </div>
+</div>
+
 <script>
-  $(document).ready(function() {
-    $("#importPopupWrapper").css("display", "none");
-    hideImportDialogAndOverlay();
-    
-    $('.boxclose').click(function(){
-			hideImportDialogAndOverlay();
-    });
-    
-    $(document).keyup(function(e) {
-     	if (e.keyCode == 27) {	// esc pressed
-        if ($(".import-export-dialog").length ||
-        		$(".boxclose").length ||
-        		$(".overlay").length) {
-        		hideImportDialogAndOverlay();		
-    		}
-    	}
-		});
-  });
-  
-  //$("#activity-report").click(function() {
-      //showOverlay();
-      //$('#importPopupWrapper').animate({
-			//			opacity: "toggle",
-			//			height: "toggle"
-			//}); 
-			//$("#activity-report-dialog").css("display", "block");
-    //});
-  
-  function showOverlay() {
-    $('#overlay').fadeIn(200);
-  }
-  
-  function hideImportDialogAndOverlay () {
-    	if ($('#importPopupWrapper').css('display') == 'block') {
-				$('#importPopupWrapper').animate({
-					opacity: "toggle",
-					height: "toggle"
-				});
-			}
-			
-    	$('#overlay').fadeOut('fast');
-	}
-  
+   $(document).ready(function() {
+     $("#importPopupWrapper").css("display", "none");
+     hideImportDialogAndOverlay();
+     
+     $('.boxclose').click(function(){
+   	hideImportDialogAndOverlay();
+     });
+     
+     $(document).keyup(function(e) {
+      	if (e.keyCode == 27) {	// esc pressed
+         if ($(".import-export-dialog").length ||
+         		$(".boxclose").length ||
+         		$(".overlay").length) {
+         		hideImportDialogAndOverlay();		
+     		}
+     	}
+   });
+   });
+   
+   //$("#activity-report").click(function() {
+       //showOverlay();
+       //$('#importPopupWrapper').animate({
+   	//			opacity: "toggle",
+   	//			height: "toggle"
+   	//}); 
+   	//$("#activity-report-dialog").css("display", "block");
+     //});
+   
+   function showOverlay() {
+     $('#overlay').fadeIn(200);
+   }
+   
+   function hideImportDialogAndOverlay () {
+     	if ($('#importPopupWrapper').css('display') == 'block') {
+   		$('#importPopupWrapper').animate({
+   			opacity: "toggle",
+   			height: "toggle"
+   		});
+   	}
+   	
+     	$('#overlay').fadeOut('fast');
+   }
+   
 </script>
