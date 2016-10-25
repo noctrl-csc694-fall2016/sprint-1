@@ -62,12 +62,12 @@ a:hover{
   {
   	text-decoration: none;
   	color: rgb(140, 137, 240);
-	text-shadow: none;
-	-webkit-transition: 500ms linear 0s;
-	-moz-transition: 500ms linear 0s;
-	-o-transition: 500ms linear 0s;
-	transition: 500ms linear 0s;
-	outline: 0 none;
+	  text-shadow: none;
+	  -webkit-transition: 500ms linear 0s;
+	  -moz-transition: 500ms linear 0s;
+	  -o-transition: 500ms linear 0s;
+	  transition: 500ms linear 0s;
+	  outline: 0 none;
   }
   a.glow:hover, a.glow:focus
   {
@@ -288,7 +288,10 @@ a.btn.btn-danger{
 
 /* Tables */
 .table-striped > tbody > tr:nth-of-type(odd){
-  background-color: rgb(188, 205, 221);	
+  background-color: rgb(224, 230, 244);
+}
+.table-striped tbody tr:nth-child(even):hover td {
+   background-color: rgb(252, 227, 236);
 }
 
 /* Misc */
