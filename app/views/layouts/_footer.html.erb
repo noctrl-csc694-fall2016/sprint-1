@@ -18,37 +18,36 @@
   </div>
 </footer>
 <script>
-  $(document).ready(function(){
-    /* Shorten the banner on scroll */
-    $(window).scroll(function() {
-      var x = $(window).scrollTop();
-      if (x >= 60) {
-        $(".navbar-brand-image").hide();
-        $( ".navbar-brand-text" ).replaceWith( "<h1 class=\"navbar-brand-text\">Gift Garden</h1>" );
-        $(".navbar-donna").css("height", "60px");
-        $(".navbar-donna-brand").css("padding", "0px");
-        $(".navbar-donna-search").css("margin-top", "5px");
-      } else {
-        $(".navbar-brand-image").show();
-        $( ".navbar-brand-text" ).replaceWith( "<h1 class=\"navbar-brand-text\">Gift<span class=\"line-break\">Garden</span></h1>" );
-        $(".navbar-donna").css("height", "120px");
-        $(".navbar-donna-brand").css("padding", "15px");
-        $(".navbar-donna-search").css("margin-top", "40px");
-      }
-    });
-    
-    /* Bottom Align Specific Tags 
-    (http://stackoverflow.com/questions/13841387/how-do-i-bottom-align-grid-elements-in-bootstrap-fluid-layout)
-    */
-    //for each element that is classed as 'pull-down', set its margin-top to the difference between its own height and the height of its parent
-    $('.vertical-align-bottom').each(function() {
-      var $this = $(this);
-      $this.css('margin-top', $this.parent().height() - $this.height())
-    });
-    
-    /* Adds Tooltip */
-    $(document).ready(function(){
-      $('[data-toggle="tooltip"]').tooltip(); 
-    });
+//This function call appears to have conflicts with in page JS
+$(document).ready(function(){ 
+  /* Shorten the banner on scroll */
+  $(window).scroll(function() {
+    var x = $(window).scrollTop();
+    if (x >= 60) {
+      $(".navbar-brand-image").hide();
+      $( ".navbar-brand-text" ).replaceWith( "<h1 class=\"navbar-brand-text\">Gift Garden</h1>" );
+      $(".navbar-donna").css("height", "60px");
+      $(".navbar-donna-brand").css("padding", "0px");
+      $(".navbar-donna-search").css("margin-top", "5px");
+    } else {
+      $(".navbar-brand-image").show();
+      $( ".navbar-brand-text" ).replaceWith( "<h1 class=\"navbar-brand-text\">Gift<span class=\"line-break\">Garden</span></h1>" );
+      $(".navbar-donna").css("height", "120px");
+      $(".navbar-donna-brand").css("padding", "15px");
+      $(".navbar-donna-search").css("margin-top", "40px");
+    }
+  });
+  
+  /* Bottom Align Specific Tags 
+  (http://stackoverflow.com/questions/13841387/how-do-i-bottom-align-grid-elements-in-bootstrap-fluid-layout)
+  */
+  //for each element that is classed as 'pull-down', set its margin-top to the difference between its own height and the height of its parent
+  $('.vertical-align-bottom').each(function() {
+    var $this = $(this);
+    $this.css('margin-top', $this.parent().height() - $this.height())
+  });
+  
+  /* Adds Tooltip */
+  $('[data-toggle="tooltip"]').tooltip(); 
 });
 </script>
