@@ -1,10 +1,12 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+
+  #----------------------------------#
+  # Database Seed File
+  # original written by: Wei H, Oct 14 2016
+  # major contributions by:
+  #             Andy W, Oct 18 2016
+  #----------------------------------#
 
 # Create sample activties
 Activity.create!( name: "Golf Outing 2015",
@@ -34,7 +36,8 @@ Activity.create!( name: "Food Truck",
                   description: "Fun",
                   goal: "100",
                   notes: "Contact Jen for more information.")
-                  
+
+#Create sample donors                 
 Donor.create!( first_name: "Joe",
                   last_name: "Donor",
                   address: "101 College Lane",
@@ -76,6 +79,7 @@ Donor.create!( first_name: "Brian",
                   email: "bbrown@hotmail.com",
                   notes: "Example donor #4.")
                   
+#Create sample donations/gifts                 
 Gift.create!( activity_id: 1,
               donor_id: 1,
               donation_date: "2016-09-06",
