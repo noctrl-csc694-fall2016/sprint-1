@@ -20,202 +20,204 @@
 
 /* Core CSS */
 body {
-	margin-top: 10px;
-	padding-top: 20px;
-	margin-bottom: 60px;		/* margin bottom by footer height */
-	font-family: 'Open Sans', sans-serif;
+  margin-top: 10px;
+  padding-top: 20px;
+  margin-bottom: 60px;		/* margin bottom by footer height */
+  font-family: 'Open Sans', sans-serif;
 }
 p{
-	font-size: 1.15em;
+  font-size: 1.15em;
+}
+a, a:active, a:visited{
+  
 }
 a:hover{
-	text-decoration: none;
+  text-decoration: none;
 }
 
 /* Header */
 .navbar-donna {
-	background-color: rgb(255,255,255);
-	height: 120px;
-	border-bottom: 2px solid rgb(172, 168, 242);
+  background-color: rgb(255,255,255);
+  height: 120px;
+  border-bottom: 2px solid rgb(172, 168, 242);
 }
 .navbar-donna-search {
-	margin-top: 40px;
-	a{
-		color: rgb(140, 137, 240);
-	}
-	&:hover{
-		color: rgb(140, 137, 240);
-	}
+  margin-top: 40px;
+  a{
+    color: rgb(140, 137, 240);
+  }
+  &:hover{
+  	color: rgb(140, 137, 240);
+  }
 }
 .navbar-donna-brand {
-	color: rgb(140, 137, 240);
-	font-family: 'Exo', sans-serif;
-	
-	a{
-		color: rgb(140, 137, 240);
-	}
-	
-	a.glow, a.glow:hover, a.glow:focus
-	{
-		text-decoration: none;
-		color: rgb(140, 137, 240);
-		text-shadow: none;
-		-webkit-transition: 500ms linear 0s;
-		-moz-transition: 500ms linear 0s;
-		-o-transition: 500ms linear 0s;
-		transition: 500ms linear 0s;
-		outline: 0 none;
-	}
-	a.glow:hover, a.glow:focus
-	{
-		color: rgb(140, 137, 240);
-		text-shadow: -1px 1px 8px rgb(255,255,204), 1px -1px 8px rgb(140, 137, 240);
-	}
+  color: rgb(140, 137, 240);
+  font-family: 'Exo', sans-serif;
+  
+  a{
+  	color: rgb(140, 137, 240);
+  }
+  
+  a.glow, a.glow:hover, a.glow:focus
+  {
+  	text-decoration: none;
+  	color: rgb(140, 137, 240);
+	  text-shadow: none;
+	  -webkit-transition: 500ms linear 0s;
+	  -moz-transition: 500ms linear 0s;
+	  -o-transition: 500ms linear 0s;
+	  transition: 500ms linear 0s;
+	  outline: 0 none;
+  }
+  a.glow:hover, a.glow:focus
+  {
+  	color: rgb(140, 137, 240);
+  	text-shadow: -1px 1px 8px rgb(255,255,204), 1px -1px 8px rgb(140, 137, 240);
+  }
 }
 .navbar-header .navbar-brand{
-    float: right;
-    padding: 0px 15px 15px 15px;
+  float: right;
+  padding: 0px 15px 15px 15px;
 }
 .page-header{
-	border-bottom: 1px solid rgb(188, 205, 221);
+  border-bottom: 1px solid rgb(188, 205, 221);
 }
 
 /* Page Content */
 .container-donna {
-	padding-top: 120px;
-	margin-bottom:60px;
-	a {
-		color: rgb(204, 107, 54);
-		&:hover{
-			color: rgb(97, 52, 13);
-		}
-	}
-	table{
-		a {
-		color: rgb(97, 52, 13);
-		}
-		&:hover{
-			color: rgb(204, 107, 54);
-		}
-	}
+  padding-top: 120px;
+  margin-bottom:60px;
+  a {
+	 color: rgb(204, 107, 54);
+  }
+  a:hover{
+  	color: rgb(97, 52, 13);
+  }
+  
+  table{
+  	a {
+  	  color: rgb(204, 107, 54);
+  	}
+	  a:hover{
+	    color: rgb(97, 52, 13);
+	  }
+  }
 }
 .page-content{
-	h1, h2, h3, h4, h5, h6{
-		font-weight: bold;
-		font-style: italic;
-		color: rgb(50, 42, 63);
-	}
-	
-	/* Image Source: http://www.clipartbest.com/cliparts/biy/Knn/biyKnn4iL.png
-	background-image:url('/assets/butterfly.gif');
-    background-repeat:no-repeat;
-    background-position:0% 20%;
-    background-attachment: fixed; */
+  h1, h2, h3, h4, h5, h6{
+  	font-weight: bold;
+	font-style: italic;
+	color: rgb(50, 42, 63);
+  }
+  /* Image Source: http://www.clipartbest.com/cliparts/biy/Knn/biyKnn4iL.png
+  background-image:url('/assets/butterfly.gif');
+  background-repeat:no-repeat;
+  background-position:0% 20%;
+  background-attachment: fixed; */
 }
 
 .row-donna-home-icons {
-	padding: 25px;
-	font-size: 1.75;
-	color: rgb(105,105,105);
+  padding: 25px;
+  font-size: 1.75;
+  color: rgb(105,105,105);
 }
 .icon-donna {
-	font-size: 1.75em;
-	padding-right: 12px;
+  font-size: 1.75em;
+  padding-right: 12px;
 }
 .icon-donna-text {
-	font-size: 1.75em;
-	color: rgb(97, 52, 13);
+  font-size: 1.75em;
 }
 .icon-donna-new {
-	color: rgba(127, 165, 66, 1.0);
+  color: rgba(127, 165, 66, 1.0);
 }
 .icon-donna-surf {
-	color: rgb(73, 64, 155);
+  color: rgb(73, 64, 155);
 }
 .icon-donna-reports {
-	color: rgb(172, 168, 242);
+  color: rgb(172, 168, 242);
 }
 .icon-donna-importexport {
-	color: rgb(204, 107, 54);
+  color: rgb(204, 107, 54);
 }
 .contactDiv {
-	text-align:center;
+  text-align:center;
 }
 
 /** Activities */
 .activity-icon {
-	font-size: 20px;
-	color: rgb(0,128,0);
+  font-size: 20px;
+  color: rgb(0,128,0);
 }
 .activity-text {
-	font-size: 20px;
+  font-size: 20px;
 }
 
 /* Reports */
 .report-row {
-	margin-top: 20px;
+  margin-top: 20px;
 }
 .report-text {
-	color: rgb(105,105,105);
+  color: rgb(105,105,105);
 }
 .report-title {
-	font-size: 32px;
+  font-size: 32px;
 }
 .report-description{
-	font-size: 1.5em;
-	font-size: 24px;
-	font-style: italic;
-	padding-left: 10px;
+  font-size: 1.5em;
+  font-size: 24px;
+  font-style: italic;
+  padding-left: 10px;
 }
 .report-icon {
-	font-size: 28px;
-	padding-right: 12px;
-	color: rgb(105,105,105);
+  font-size: 28px;
+  padding-right: 12px;
+  color: rgb(105,105,105);
 }
 
 /* Import-export css - just use report css when possible */
 .export-header {
-	margin-top: 40px;
+  margin-top: 40px;
 }
 .import-color {
-	color: rgb(73, 64, 155);		/* import is purple */
+  color: rgb(73, 64, 155);		/* import is purple */
 }
 .import-icon {
-	font-size: 28px;
-	padding-right: 12px;
+  font-size: 28px;
+  padding-right: 12px;
 }
 .export-color {
-	color: rgb(204, 107, 54);		/* export is funky copper */
+  color: rgb(204, 107, 54);		/* export is funky copper */
 }
 .export-icon {
-	font-size: 28px;
-	padding-right: 12px;
+  font-size: 28px;
+  padding-right: 12px;
 }
 
 /* Login screen CSS */
 .navbar-donna-login {
-	background: transparent;
+  background: transparent;
 }
 .navbar-donna-login-logo {
-	margin-top: 40px;
+  margin-top: 40px;
 }
 .navbar-donna-login-title {
-	color: rgb(105,105,105);
+  color: rgb(105,105,105);
 }
 .row-login {
-	padding-top: 100px;
+  padding-top: 100px;
 }
 
 /* Page Action Buttons */
 .primary-action-link {
-	color: rgb(133,187,101);
-	font-size: 1.5em;
+  color: rgb(133,187,101);
+  font-size: 1.5em;
 }
 
 /* Forms */
 .required-field-marker {
-	color: rgb(204, 107, 54);
-	font-weight: bold;
+  color: rgb(204, 107, 54);
+  font-weight: bold;
 }
 #error_explanation {
   color: rgb(255, 0, 0);
@@ -231,67 +233,71 @@ a:hover{
   }
 }
 .btn.btn-success{
-	background-color: rgb(127, 165, 66);
-	color: rgb(255, 255, 255);
+  background-color: rgb(139, 173, 84);
+  color: rgb(255, 255, 255);
 }
 a.btn.btn-danger{
-	background-color: rgb(204, 107, 54);
-	color: rgb(255, 255, 255);
+  background-color: rgb(204, 107, 54);
+  color: rgb(255, 255, 255);
 }
 .select-medium{
-	width: 100px;
+  width: 100px;
 }
 
 /* Reports */
 .report-title{
-	font-size: 1.5em;
-	font-weight: bold;
+  font-size: 1.5em;
+  font-weight: bold;
 }
 .report-description{
-	font-size: 1.5em;
+  font-size: 1.5em;
 }
 .report-icon{
-	font-size: 1.5em;
-	font-weight: bold;
+  font-size: 1.5em;
+  font-weight: bold;
 }
 
 /* Footer CSS */
 .footer {
-    bottom: 0;
-    width: 100%;
-    min-height: 60px;
-    position: fixed; /* Sticky Footer */
-	background-color: rgba(127, 165, 66, 0.90);
-	/* Handles custom border curvature */
-	-webkit-border-top-left-radius: 50px;
-	-webkit-border-top-right-radius: 50px;
-    -moz-border-radius-topleft: 50px;
-    -moz-border-radius-topright: 50px;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-    font-size: 1.0em;
-    
-    .footer-text {
-		margin: 20px 0;		/* center footer text horizontally */
-	}
+  bottom: 0;
+  width: 100%;
+  min-height: 60px;
+  position: fixed; /* Sticky Footer */
+  background-color: rgba(127, 165, 66, 0.90);
+  /* Handles custom border curvature */
+  -webkit-border-top-left-radius: 50px;
+  -webkit-border-top-right-radius: 50px;
+  -moz-border-radius-topleft: 50px;
+  -moz-border-radius-topright: 50px;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  font-size: 1.0em;
+  
+  .footer-text {
+  	margin: 20px 0;		/* center footer text horizontally */
+  }
 	
-	a{
-		color: rgb(97, 52, 13);
-	}
-	a:hover{
-		color: rgb(50, 42, 63);
-	}
+  a{
+  	color: rgb(97, 52, 13);
+  }
+  a:hover{
+  	color: rgb(50, 42, 63);
+  }
 }
+
 
 /* Tables */
 .table-striped > tbody > tr:nth-of-type(odd){
-	background-color: rgb(188, 205, 221);	
+  background-color: rgb(224, 230, 244);
+}
+.table-striped tbody tr:nth-child(even):hover td {
+   background-color: rgb(252, 227, 236);
 }
 
 /* Misc */
 .top-margin-sm{
-	margin-top: 10px;
+  margin-top: 10px;
 }
 .line-break{
-	display: block;
+  display: block;
 }
