@@ -79,11 +79,13 @@
   
 <script>
   $(document).ready(function() {
-    $("#importPopupWrapper").css('display', 'none');
-    $("#activity-report-dialog").css("display", "none");
+    $("#importPopupWrapper").css("display", "none");
+    hideImportDialogAndOverlay();
+    
     $('.boxclose').click(function(){
 			hideImportDialogAndOverlay();
     });
+    
     $(document).keyup(function(e) {
      	if (e.keyCode == 27) {	// esc pressed
         if ($(".import-export-dialog").length ||
@@ -95,14 +97,14 @@
 		});
   });
   
-  $("#activity-report").click(function() {
+  //$("#activity-report").click(function() {
       //showOverlay();
       //$('#importPopupWrapper').animate({
 			//			opacity: "toggle",
 			//			height: "toggle"
 			//}); 
 			//$("#activity-report-dialog").css("display", "block");
-    });
+    //});
   
   function showOverlay() {
     $('#overlay').fadeIn(200);
