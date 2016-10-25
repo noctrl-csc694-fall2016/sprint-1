@@ -1,10 +1,22 @@
+ #----------------------------------#
+  # Donors Controller Helper
+  # original written by: Wei H, Oct 20 2016
+  # major contributions by:
+  #             Andy W, Oct 22 2016
+  #----------------------------------#
+
+
 module DonorsHelper
   
+  # most methods below used on Surf Donors screens
+  
+  #returns the quantity of times a donor has made a donation
   def gift_count_per_donor(donor)
     selected_gifts = Gift.where(:donor_id => donor)
     selected_gifts.count
   end
   
+  #returns the total dollar amount a donor has donated
   def gift_total_amount_per_donor(donor)
     selected_gifts = Gift.where(:donor_id => donor)
     sum = 0
@@ -14,6 +26,7 @@ module DonorsHelper
     return sum
   end
   
+  #returns the last gift that a donor made, by created_at date
   def find_last_gift(donor)
     selected_gifts = Gift.where(:donor_id => donor)
     last_gift = nil
@@ -29,6 +42,8 @@ module DonorsHelper
     return last_gift
   end
   
+  #returns the last gift $ amount a donor has given, or 0 if no 
+  #gifts have been made
   def last_gift_amount(donor)
     last_gift = find_last_gift(donor)
     if last_gift.nil?
@@ -38,6 +53,7 @@ module DonorsHelper
     end
   end
   
+  #returns the last activity a donor gave for
   def last_activity(donor)
     last_gift = find_last_gift(donor)
     if last_gift.nil?

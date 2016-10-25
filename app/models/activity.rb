@@ -1,4 +1,11 @@
 class Activity < ApplicationRecord
+  #----------------------------------#
+  # Activities Model Definition
+  # original written by: Andy W, Oct 13 2016
+  # major contributions by:
+  #             Wei H, Oct 15 2016
+  #             Pat M, Oct 17 2016
+  #----------------------------------#
   has_many :gifts, dependent: :destroy
   default_scope -> {order(created_at: :desc)}
   validates :name, presence: true, length: {maximum:255}

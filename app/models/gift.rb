@@ -1,4 +1,12 @@
 class Gift < ApplicationRecord
+  #----------------------------------#
+  # Gifts Model Definition
+  # original written by: Andy W, Oct 13 2016
+  # major contributions by:
+  #             Wei H, Oct 15 2016
+  #             Pat M, Oct 17 2016
+  #----------------------------------#
+  
   belongs_to :donor
   belongs_to :activity
   default_scope -> {order(created_at: :desc)}
