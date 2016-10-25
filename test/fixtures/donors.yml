@@ -1,25 +1,25 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  first_name: MyString
-  last_name: MyString
-  address: MyString
-  address2: MyString
-  city: MyString
-  state: MyString
-  zip: 1
-  phone: MyString
-  email: MyString
-  notes: MyText
+andy:
+  first_name: Andy
+  last_name: White
+  address: 101 College Ave
+  address2: APT 2
+  city: Naperville
+  state: IL
+  zip: 60564
+  phone: 815-458-5623
+  email: abwhite@noctrl.edu
+  notes: Sample Donor
 
-two:
-  first_name: MyString
-  last_name: MyString
-  address: MyString
-  address2: MyString
-  city: MyString
-  state: MyString
-  zip: 1
-  phone: MyString
-  email: MyString
-  notes: MyText
+bob:
+  first_name: Bob
+  last_name: Jones
+  address: 102 College Ave
+  address2: APT 45
+  city: Downers Grove
+  state: IL
+  zip: 60001
+  phone: 123-456-7896
+  email: bob@bob.com
+  notes: Sample donor two

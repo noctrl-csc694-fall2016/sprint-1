@@ -57,7 +57,7 @@ module DonorsHelper
   def last_activity(donor)
     last_gift = find_last_gift(donor)
     if last_gift.nil?
-      return
+      return "--No gifts yet--"
     else
       return Activity.find(last_gift.activity_id).name
     end

@@ -12,6 +12,7 @@ class Gift < ApplicationRecord
   default_scope -> {order(created_at: :desc)}
   validates :donation_date, presence: true
   validates :amount, presence: true, :numericality => {:greater_than_or_equal_to => 0}
+  validates :gift_type, presence: true
   
   # Export Gifts
   # outputs all gifts as a csv file(all attributes included).
