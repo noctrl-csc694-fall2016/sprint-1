@@ -35,7 +35,7 @@ class GiftsController < ApplicationController
     map_activities_n_donors()
     if @gift.save
       flash[:success] = "Gift added successfully!"
-      redirect_to gifts_url
+      redirect_to gifts_url(:donor_id => @gift.donor_id, :activity_id => @gift.activity_id)
     else
       render 'new'
     end
