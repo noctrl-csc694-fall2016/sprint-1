@@ -43,6 +43,4 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     assert_select "title", "Import-Export Information | Gift Garden"
   end
 
-  
-
 end
